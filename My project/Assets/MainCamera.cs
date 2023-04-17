@@ -13,9 +13,9 @@ public class MainCamera : MonoBehaviour
     public float width = 30f;
 
     private float circlePos = 0f;
-    private float circleIncrement = 1f;
+    private float circleIncrement = 0.001f;
 
-    private float rotator = 35f;
+    private float rotator = 360f / (2 * Mathf.PI) * 0.001f;
 
 
 
@@ -29,7 +29,8 @@ public class MainCamera : MonoBehaviour
             return;
 
         //get position of the middle of the board
-        Vector3 pos = GameObject.Find("FieldCenter").transform.position;
+        Vector3 center_pos = GameObject.Find("FieldCenter").transform.position;
+        Vector3 pos = transform.position;
 
         if (Input.GetKey("w") || Input.mousePosition.y >= Screen.height - panBorderThickness)
         {
@@ -41,19 +42,21 @@ public class MainCamera : MonoBehaviour
         }
         if (Input.GetKey("a") || Input.mousePosition.x <= panBorderThickness)
         {
-            circlePos -= circleIncrement * Time.deltaTime;
-            transform.Rotate(Vector3.up * rotator * Time.deltaTime, Space.World);
+            circlePos -= circleIncrement;
+            transform.Rotate(Vector3.up * rotator, Space.World);
         }
         if (Input.GetKey("d") || Input.mousePosition.x >= Screen.width - panBorderThickness)
         {
-            circlePos += circleIncrement * Time.deltaTime;
-            transform.Rotate(Vector3.down * rotator * Time.deltaTime, Space.World);
+            circlePos += circleIncrement;
+            transform.Rotate(Vector3.down * rotator, Space.World);
         }
 
-        pos.y = Mathf.Clamp(pos.y, minY, maxY);
-        pos.x = Mathf.Cos(circlePos) * width;
-        pos.z = Mathf.Sin(circlePos) * width;
 
+        pos.y = Mathf.Clamp(pos.y, minY, maxY);
+        pos.x = center_pos.x + Mathf.Cos(circlePos) * width;
+        pos.z = center_pos.z + Mathf.Sin(circlePos) * width;
+
+        Debug.Log(circlePos);
 
         transform.position = pos;
 
