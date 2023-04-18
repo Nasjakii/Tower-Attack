@@ -1,9 +1,10 @@
+using System;
+using Unity.VisualScripting;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class MainCamera : MonoBehaviour
 {
-    public float panSpeed = 30f;
-    public float panBorderThickness = 20f;
 
     private bool doMovement = true;
     public float ySpeed = 10f;
@@ -17,7 +18,10 @@ public class MainCamera : MonoBehaviour
 
     private float rotator = 360f / (2 * Mathf.PI) * 0.001f;
 
-
+    private int field = 1;
+    private int switchSpeed = 20;
+    private bool switching = false;
+    private float moved = 0f;
 
     void Update()
     {
@@ -29,23 +33,54 @@ public class MainCamera : MonoBehaviour
             return;
 
         //get position of the middle of the board
-        Vector3 center_pos = GameObject.Find("FieldCenter").transform.position;
+        GameObject fieldCenter = GameObject.Find("FieldCenter");
+        Vector3 center_pos = fieldCenter.transform.position;
+
+        
+
+        
+
+        if (Input.GetKeyUp("tab") && !switching)
+        {
+            switching = true;
+            field *= -1;
+        }
+        if (switching)
+        {
+            if (Mathf.Abs(moved) >= 200)
+            {
+                switching = false;
+                moved = 0f;
+                return;
+            }
+
+            Vector3 dir = new Vector3(0,0,field); 
+            fieldCenter.transform.Translate(dir.normalized * switchSpeed * Time.deltaTime, Space.World);
+            moved += switchSpeed * Time.deltaTime;
+
+        }
+
+
+
+
+
+
         Vector3 pos = transform.position;
 
-        if (Input.GetKey("w") || Input.mousePosition.y >= Screen.height - panBorderThickness)
+        if (Input.GetKey("w"))
         {
             pos.y -= ySpeed * Time.deltaTime;
         }
-        if (Input.GetKey("s") || Input.mousePosition.y <= panBorderThickness)
+        if (Input.GetKey("s"))
         {
             pos.y += ySpeed * Time.deltaTime;  
         }
-        if (Input.GetKey("a") || Input.mousePosition.x <= panBorderThickness)
+        if (Input.GetKey("a"))
         {
             circlePos -= circleIncrement;
             transform.Rotate(Vector3.up * rotator, Space.World);
         }
-        if (Input.GetKey("d") || Input.mousePosition.x >= Screen.width - panBorderThickness)
+        if (Input.GetKey("d"))
         {
             circlePos += circleIncrement;
             transform.Rotate(Vector3.down * rotator, Space.World);
@@ -56,10 +91,10 @@ public class MainCamera : MonoBehaviour
         pos.x = center_pos.x + Mathf.Cos(circlePos) * width;
         pos.z = center_pos.z + Mathf.Sin(circlePos) * width;
 
-        Debug.Log(circlePos);
-
         transform.position = pos;
 
     }
+
+
 }
 
