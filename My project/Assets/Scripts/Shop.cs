@@ -15,6 +15,7 @@ public class Shop : MonoBehaviour
     public void PurchaseTroop(GameObject troop)
     {
         Debug.Log("Buy");
+
         buyManager.SetTroopSelected(troop);
     }
 

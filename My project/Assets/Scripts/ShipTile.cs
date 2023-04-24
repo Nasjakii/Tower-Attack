@@ -19,25 +19,23 @@ public class ShipTile : MonoBehaviour
     {
         troop_to_build = buyManager.GetTroopSelected();
 
-        if (troop != null)
-        {
-            Debug.Log("Cant build here! - Todo Display on screen");
-            return;
-        }
-
-
-        //build Troop
+        setTroop(troop_to_build);
 
         
     }
 
 
-    private void setTroop()
+    private void setTroop(GameObject _troop)
     {
         //check for money
         //check place
+        if (troop != null)
+        {
+            Debug.Log("Cant build here! - Todo Display on screen");
+            return;
+        }
         //place troop at tile
-        troop = (GameObject)Instantiate(troop_to_build, transform.position + positionOffset, transform.rotation);
+        troop = (GameObject)Instantiate(_troop, transform.position + positionOffset, transform.rotation);
         //add troop to array
 
     }

@@ -23,6 +23,9 @@ public class MainCamera : MonoBehaviour
     private bool switching = false;
     private float moved = 0f;
 
+    public GameObject gameUI;
+    public GameObject baseUI;
+
     void Update()
     {
 
@@ -44,6 +47,7 @@ public class MainCamera : MonoBehaviour
         {
             switching = true;
             field *= -1;
+
         }
         if (switching)
         {
@@ -61,6 +65,16 @@ public class MainCamera : MonoBehaviour
         }
 
 
+        if (field == 1)
+        {
+            gameUI.SetActive(true);
+            baseUI.SetActive(false);
+        }
+        else if (field == -1)
+        {
+            gameUI.SetActive(false);
+            baseUI.SetActive(true);
+        }
 
 
 
