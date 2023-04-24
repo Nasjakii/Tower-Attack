@@ -19,7 +19,7 @@ public class MainCamera : MonoBehaviour
     private float rotator = 360f / (2 * Mathf.PI) * 0.001f;
 
     private int field = 1;
-    private int switchSpeed = 20;
+    public int switchSpeed = 100;
     private bool switching = false;
     private float moved = 0f;
 
