@@ -4,8 +4,8 @@ using static UnityEngine.GraphicsBuffer;
 
 public class ShipTile : MonoBehaviour
 {
-    private GameObject turret;
-    public GameObject turret_to_build;
+    private GameObject troop;
+    public GameObject troop_to_build;
 
     public Vector3 positionOffset;
 
@@ -17,16 +17,28 @@ public class ShipTile : MonoBehaviour
 
     private void OnMouseDown()
     {
-        turret_to_build = buyManager.GetTroopSelected();
+        troop_to_build = buyManager.GetTroopSelected();
 
-        if (turret != null)
+        if (troop != null)
         {
             Debug.Log("Cant build here! - Todo Display on screen");
             return;
         }
 
 
-        //build Turret
-        turret = (GameObject)Instantiate(turret_to_build, transform.position + positionOffset, transform.rotation);
+        //build Troop
+
+        
+    }
+
+
+    private void setTroop()
+    {
+        //check for money
+        //check place
+        //place troop at tile
+        troop = (GameObject)Instantiate(troop_to_build, transform.position + positionOffset, transform.rotation);
+        //add troop to array
+
     }
 }
