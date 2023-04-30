@@ -1,7 +1,7 @@
 
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class Troop : MonoBehaviour
 {
     public float speed = 10f;
 
