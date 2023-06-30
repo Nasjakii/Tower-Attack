@@ -8,6 +8,7 @@ public class SpaceShip : MonoBehaviour
 
     private Transform target;
     private int wavepointIndex = 0;
+    private bool start_flying = false;
 
     void Start()
     {
@@ -15,13 +16,16 @@ public class SpaceShip : MonoBehaviour
     }
     void Update()
     {
-        Vector3 dir = target.position - transform.position; //moving to the next target
-        transform.Translate(dir.normalized * speed * Time.deltaTime, Space.World);
-
-        if (Vector3.Distance(transform.position, target.position) <= 0.2f)
+        if(start_flying == true)
         {
-            GetNextWaypoint();
-        }
+            Vector3 dir = target.position - transform.position; //moving to the next target
+            transform.Translate(dir.normalized * speed * Time.deltaTime, Space.World);
+
+            if (Vector3.Distance(transform.position, target.position) <= 0.2f)
+            {
+                GetNextWaypoint();
+            }
+        } 
     }
 
     void GetNextWaypoint()
@@ -33,5 +37,10 @@ public class SpaceShip : MonoBehaviour
         }
         wavepointIndex++;
         target = FlyPoints.points[wavepointIndex];
+    }
+
+    public void setFlying(bool flying)
+    {
+        start_flying = flying;
     }
 }

@@ -1,4 +1,5 @@
 
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class BuyManager : MonoBehaviour
@@ -17,15 +18,27 @@ public class BuyManager : MonoBehaviour
 
     public GameObject troop;
 
-    private GameObject troop_selected;
+    private TroopBlueprint troop_to_buy;
 
-    public GameObject GetTroopSelected()
+    public bool CanPlace { get { return troop_to_buy != null; } }
+
+    public void PlaceTroopOn(ShipTile shipTile)
     {
-        return troop_selected;
+        if (PlayerStats.Money < troop_to_buy.cost)
+        {
+            Debug.Log("Not enough money to buy that, cost: " + troop_to_buy.cost + " your Money: " + PlayerStats.Money);
+            return;
+        }
+        PlayerStats.Money -= troop_to_buy.cost;
+
+        GameObject troop = (GameObject) Instantiate(troop_to_buy.prefab, shipTile.GetPlacePosition(), Quaternion.identity);
+        shipTile.troop = troop;
+
+        Debug.Log("Troop bought! Money Left: " + PlayerStats.Money);
     }
-    public void SetTroopSelected(GameObject troop)
+    public void SelectTroopToBuy(TroopBlueprint troop)
     {
-        troop_selected = troop;
+        troop_to_buy = troop;
     }
 
 }

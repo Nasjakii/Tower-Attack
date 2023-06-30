@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class Shop : MonoBehaviour
 {
+    public TroopBlueprint troop;
+    public TroopBlueprint troopSpecial;
 
     BuyManager buyManager;
 
@@ -12,12 +14,18 @@ public class Shop : MonoBehaviour
         buyManager = BuyManager.instance;
     }
 
-    public void PurchaseTroop(GameObject troop)
+    public void SelectStandardTroop()
     {
-        Debug.Log("Buy");
-
-        buyManager.SetTroopSelected(troop);
+        Debug.Log("Standard troop");
+        buyManager.SelectTroopToBuy(troop);
     }
+
+    public void SelectSpecialTroop()
+    {
+        Debug.Log("Special troop");
+        buyManager.SelectTroopToBuy(troopSpecial);
+    }
+
 
 
 
