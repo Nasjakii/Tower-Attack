@@ -8,10 +8,12 @@ public class MainCamera : MonoBehaviour
 
     private bool doMovement = true;
     public float ySpeed = 10f;
-    public float minY = 10f;
-    public float maxY = 80f;
+    private float minY = 10f;
+    private float maxY = 80f;
 
-    public float width = 30f;
+    public float rotate_speed = 1;
+
+    private float width = 30f;
 
     private float circlePos = 0f;
     private float circleIncrement = 0.001f;
@@ -25,6 +27,12 @@ public class MainCamera : MonoBehaviour
 
     public GameObject gameUI;
     public GameObject baseUI;
+
+    private void Start()
+    {
+        circleIncrement = circleIncrement * rotate_speed;
+        rotator = rotator * rotate_speed;
+    }
 
     void Update()
     {
