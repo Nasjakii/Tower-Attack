@@ -132,10 +132,10 @@ MonoBehaviour:
   range: 15
   fireRate: 1
   enemyTag: Enemy
-  origin: {fileID: 0}
+  origin: {fileID: 6513523910446144659}
   turnSpeed: 10
   bulletPrefab: {fileID: 5590444553451817763, guid: 29822e2c7f953834aab895bb4fdc80d4, type: 3}
-  firePoint: {fileID: 0}
+  firePoint: {fileID: 6513523910446144659}
 --- !u!1 &6788507010532029853
 GameObject:
   m_ObjectHideFlags: 0

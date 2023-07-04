@@ -32,7 +32,7 @@ public class SpaceShip : MonoBehaviour
     {
         if (wavepointIndex >= FlyPoints.points.Length - 1)
         {
-            Destroy(gameObject);
+            //Destroy(gameObject);
             return;
         }
         wavepointIndex++;
