@@ -1,11 +1,12 @@
 
+using System.Collections.Generic;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class BuyManager : MonoBehaviour
 {
-
     public static BuyManager instance;
+
     private void Awake()
     {
         if (instance != null)
@@ -16,8 +17,10 @@ public class BuyManager : MonoBehaviour
         instance = this;
     }
 
-    public GameObject troop;
 
+    public Spawner spawner;
+
+    public GameObject troop;
     private TroopBlueprint troop_to_buy;
 
     public bool CanPlace { get { return troop_to_buy != null; } }
@@ -31,7 +34,15 @@ public class BuyManager : MonoBehaviour
         }
         PlayerStats.Money -= troop_to_buy.cost;
 
+        SpawnTroop inst = new SpawnTroop();
+        inst.troopPrefab = troop_to_buy.prefab;
+        inst.count = 1;
+        inst.time_between_spawns = 0;
+        inst.time_after_spawn = 10;
+        spawner.addTroop(inst);
+
         GameObject troop = (GameObject) Instantiate(troop_to_buy.prefab, shipTile.GetPlacePosition(), Quaternion.identity);
+        troop.GetComponent<Troop>().speed = 0f;
         shipTile.troop = troop;
 
         Debug.Log("Troop bought! Money Left: " + PlayerStats.Money);
@@ -41,4 +52,7 @@ public class BuyManager : MonoBehaviour
         troop_to_buy = troop;
     }
 
+
+
+    
 }

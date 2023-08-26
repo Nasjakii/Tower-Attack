@@ -11,6 +11,7 @@ public class Troop : MonoBehaviour
     void Start()
     {
         target = Waypoints.points[0];
+        //Debug.Log("Hello I exist");
     }
     void Update()
     {
