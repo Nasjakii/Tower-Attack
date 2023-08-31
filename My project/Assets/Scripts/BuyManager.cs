@@ -57,7 +57,7 @@ public class BuyManager : MonoBehaviour
         inst.time_after_spawn = 2;
         spawner.GetComponent<Spawner>().addTroop(inst);
 
-        GameObject troop = (GameObject) Instantiate(troop_to_buy.prefab, shipTile.GetPlacePosition(), Quaternion.identity);
+        GameObject troop = (GameObject) Instantiate(troop_to_buy.prefab, shipTile.GetPlacePosition(), inst.troopPrefab.transform.rotation);
         troop.GetComponent<Troop>().speed = 0f;
         shipTile.troop = troop;
 

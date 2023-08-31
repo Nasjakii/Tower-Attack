@@ -32,7 +32,7 @@ public class Spawner : MonoBehaviour
 
         if (troopsToSpawn.Count > 0 && downtime <= 0)
         {
-            Instantiate(troopsToSpawn[0], transform.position, transform.rotation);
+            Instantiate(troopsToSpawn[0], transform.position, troopsToSpawn[0].transform.rotation);
             troopsToSpawn.RemoveAt(0);
             downtime = spawnTime[0] + pauseTime[0] * Time.deltaTime * 60;
             spawnTime.RemoveAt(0);
