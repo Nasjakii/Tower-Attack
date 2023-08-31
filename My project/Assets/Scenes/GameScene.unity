@@ -20554,6 +20554,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1983635465865893374, guid: e592dfd5f7fc94641bb7ee8632b98ea4, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.99794245
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983635465865893374, guid: e592dfd5f7fc94641bb7ee8632b98ea4, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983635465865893374, guid: e592dfd5f7fc94641bb7ee8632b98ea4, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.064116
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983635465865893374, guid: e592dfd5f7fc94641bb7ee8632b98ea4, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983635465865893374, guid: e592dfd5f7fc94641bb7ee8632b98ea4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 7.352
+      objectReference: {fileID: 0}
     - target: {fileID: 3110102462497427407, guid: e592dfd5f7fc94641bb7ee8632b98ea4, type: 3}
       propertyPath: enemyTag
       value: Troop
