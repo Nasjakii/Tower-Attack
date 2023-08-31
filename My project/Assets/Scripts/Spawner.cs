@@ -13,14 +13,23 @@ public class Spawner : MonoBehaviour
     public List<float> spawnTime = new List<float>();
     public List<float> pauseTime = new List<float>();
 
+    public bool spawn = false;
+    public int spawnNumber = 0;
+
+
+    private Renderer rend;
     public Transform spawnLocation;
     private void Start()
     {
+        rend = GetComponent<Renderer>();
         GenerateTroops();
+        switchColor(spawnNumber, rend);
     }
 
     void FixedUpdate()
     {
+        if (spawn == false) return;
+
         if (troopsToSpawn.Count > 0 && downtime <= 0)
         {
             Instantiate(troopsToSpawn[0], transform.position, transform.rotation);
@@ -62,10 +71,34 @@ public class Spawner : MonoBehaviour
 
     public void addTroop(SpawnTroop troop)
     {
-        troopsToSpawn.Add(troop.troopPrefab);
+        for (int i = 0;i < troop.count;i++)
+        {
+            troopsToSpawn.Add(troop.troopPrefab);
+            spawnTime.Add(troop.time_between_spawns);
+            pauseTime.Add(0f);
+                
+        }
+        pauseTime.RemoveAt(pauseTime.Count - 1);
         pauseTime.Add(troop.time_after_spawn);
-        spawnTime.Add(troop.time_between_spawns);
 
+
+    }
+
+    private void switchColor(int number, Renderer _rend)
+    {
+        switch (number)
+        {
+            case 0:
+                _rend.material.SetColor("_Color", Color.red);
+                break;
+            case 1:
+                _rend.material.SetColor("_Color", Color.green);
+                break;
+            case 2:
+                _rend.material.SetColor("_Color", Color.blue);
+                break;
+
+        }
     }
 
 

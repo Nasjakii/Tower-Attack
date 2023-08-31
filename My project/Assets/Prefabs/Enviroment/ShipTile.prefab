@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 314465820785133909}
   m_Layer: 0
   m_Name: ShipTile
-  m_TagString: Untagged
+  m_TagString: ShipTile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -93,9 +93,17 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2193933413380185370}
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
   m_IsTrigger: 0
+  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &314465820785133909
@@ -110,5 +118,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b755d807e2cf8f439e245058704c481, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turret_to_build: {fileID: 716794386693496810, guid: 1eeb3418afd73cd4b8a5eb902fc20914, type: 3}
   positionOffset: {x: 0, y: 1, z: 0}
+  troop: {fileID: 0}
+  beaconNumber: 0

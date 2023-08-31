@@ -10,5 +10,12 @@ public class PlayButton : MonoBehaviour
     {
         GameObject ship = GameObject.Find("SpaceShip");
         ship.GetComponent<SpaceShip>().setFlying(true);
+
+        GameObject[] spawners = GameObject.FindGameObjectsWithTag("Spawner");
+        foreach (GameObject spawner in spawners)
+        {
+            spawner.GetComponent<Spawner>().spawn = true;
+        }
+        
     }
 }

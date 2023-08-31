@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Troop
   - Enemy
+  - Spawner
+  - Beacon
+  - ShipTile
   layers:
   - Default
   - TransparentFX
