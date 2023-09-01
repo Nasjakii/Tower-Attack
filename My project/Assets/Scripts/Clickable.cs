@@ -17,6 +17,7 @@ public class Clickable : MonoBehaviour, IPointerDownHandler ,IPointerUpHandler, 
     public void OnPointerDown(PointerEventData eventData)
     {
         clicked = !clicked;
+        //Debug.Log("click");
         if (clicked) { rend.material.SetColor("_Color", Color.red); } else { rend.material.SetColor("_Color", Color.green); }
     }
     public void OnPointerUp(PointerEventData eventData)

@@ -18,15 +18,21 @@ public class Beacon : MonoBehaviour, IPointerDownHandler
         GameObject[] instances = GameObject.FindGameObjectsWithTag("Spawner");
         spawnerCount = instances.Length;
 
-        rend = GetComponent<Renderer>();
+        GameObject glow = transform.GetChild(0).gameObject;
+        rend = glow.GetComponent<Renderer>();
 
         switchColor(connectionNumber, rend);
     }
 
     public void OnPointerDown(PointerEventData eventData)
     {
+        //Debug.Log("click");
+
         connectionNumber++;
         connectionNumber = connectionNumber % spawnerCount;
+
+        
+
 
         switchColor(connectionNumber, rend);
 
