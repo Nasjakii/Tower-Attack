@@ -3291,7 +3291,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 247166331}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -385.22998, y: 159.52542, z: 103.015}
+  m_LocalPosition: {x: -385.22998, y: 159.52542, z: 104.77692}
   m_LocalScale: {x: 30, y: 30, z: 30}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8543,6 +8543,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f12b232d87f9b14c8c09973a2efd97d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Spaceship: {fileID: 6137707662382904698, guid: 798c8616dc5f12b4d9d10715d1019c4d, type: 3}
 --- !u!4 &667669288 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1946547488120806734, guid: d2bc5f20a8bed374abd860b9acf20a82, type: 3}
@@ -8880,8 +8881,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1079411432}
-  - {fileID: 771173656}
-  - {fileID: 1728794615}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9706,56 +9705,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 758453169}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &771173655
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 771173656}
-  - component: {fileID: 771173657}
-  m_Layer: 0
-  m_Name: FlyPoints
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &771173656
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 771173655}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -173.23001, y: 273.52542, z: 204.77692}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1195720612}
-  - {fileID: 2056043498}
-  - {fileID: 1129467048}
-  - {fileID: 1454468309}
-  - {fileID: 1372578932}
-  - {fileID: 1007188168}
-  m_Father: {fileID: 701069688}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &771173657
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 771173655}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9200f13b04fdecb42a05ab174e5bc320, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &772876456
 GameObject:
   m_ObjectHideFlags: 0
@@ -12946,37 +12895,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1946547488120806734, guid: d2bc5f20a8bed374abd860b9acf20a82, type: 3}
   m_PrefabInstance: {fileID: 1006179244}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1007188167
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1007188168}
-  m_Layer: 0
-  m_Name: FlyPoint (5)
-  m_TagString: Untagged
-  m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1007188168
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1007188167}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -16, y: 2, z: -12}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 771173656}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1008957262
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13492,6 +13410,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f12b232d87f9b14c8c09973a2efd97d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Spaceship: {fileID: 0}
 --- !u!114 &1044126408
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14782,37 +14701,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1946547488120806734, guid: d2bc5f20a8bed374abd860b9acf20a82, type: 3}
   m_PrefabInstance: {fileID: 1819332905}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1129467047
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1129467048}
-  m_Layer: 0
-  m_Name: FlyPoint (2)
-  m_TagString: Untagged
-  m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1129467048
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1129467047}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -20, y: 4, z: -172}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 771173656}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1132745397
 GameObject:
   m_ObjectHideFlags: 0
@@ -15976,37 +15864,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1191558327}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1195720611
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1195720612}
-  m_Layer: 0
-  m_Name: FlyPoint
-  m_TagString: Untagged
-  m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1195720612
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1195720611}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -24, y: 18, z: -200}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 771173656}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1197540119
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19220,37 +19077,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1371016880}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1372578931
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1372578932}
-  m_Layer: 0
-  m_Name: FlyPoint (4)
-  m_TagString: Untagged
-  m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1372578932
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1372578931}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -20, y: 24, z: -44}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 771173656}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1374345635 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5700330745207783476, guid: f1868e0d90524e446a2d3d92ae2e2691, type: 3}
@@ -20345,37 +20171,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1946547488120806734, guid: d2bc5f20a8bed374abd860b9acf20a82, type: 3}
   m_PrefabInstance: {fileID: 1454409017}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1454468308
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1454468309}
-  m_Layer: 0
-  m_Name: FlyPoint (3)
-  m_TagString: Untagged
-  m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1454468309
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1454468308}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -20, y: 24, z: -156}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 771173656}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1454500590 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5700330745207783476, guid: f1868e0d90524e446a2d3d92ae2e2691, type: 3}
@@ -23771,93 +23566,6 @@ MeshFilter:
 Transform:
   m_CorrespondingSourceObject: {fileID: 5700330745207783476, guid: f1868e0d90524e446a2d3d92ae2e2691, type: 3}
   m_PrefabInstance: {fileID: 653303590}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &1728794612
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 701069688}
-    m_Modifications:
-    - target: {fileID: 6137707662382904698, guid: 798c8616dc5f12b4d9d10715d1019c4d, type: 3}
-      propertyPath: m_Name
-      value: SpaceShip
-      objectReference: {fileID: 0}
-    - target: {fileID: 6802216874021416896, guid: 798c8616dc5f12b4d9d10715d1019c4d, type: 3}
-      propertyPath: m_RootOrder
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6802216874021416896, guid: 798c8616dc5f12b4d9d10715d1019c4d, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -185.23001
-      objectReference: {fileID: 0}
-    - target: {fileID: 6802216874021416896, guid: 798c8616dc5f12b4d9d10715d1019c4d, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 357.52542
-      objectReference: {fileID: 0}
-    - target: {fileID: 6802216874021416896, guid: 798c8616dc5f12b4d9d10715d1019c4d, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -87.22308
-      objectReference: {fileID: 0}
-    - target: {fileID: 6802216874021416896, guid: 798c8616dc5f12b4d9d10715d1019c4d, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6802216874021416896, guid: 798c8616dc5f12b4d9d10715d1019c4d, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6802216874021416896, guid: 798c8616dc5f12b4d9d10715d1019c4d, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6802216874021416896, guid: 798c8616dc5f12b4d9d10715d1019c4d, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6802216874021416896, guid: 798c8616dc5f12b4d9d10715d1019c4d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6802216874021416896, guid: 798c8616dc5f12b4d9d10715d1019c4d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6802216874021416896, guid: 798c8616dc5f12b4d9d10715d1019c4d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6137707662382904698, guid: 798c8616dc5f12b4d9d10715d1019c4d, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1728794614}
-  m_SourcePrefab: {fileID: 100100000, guid: 798c8616dc5f12b4d9d10715d1019c4d, type: 3}
---- !u!1 &1728794613 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6137707662382904698, guid: 798c8616dc5f12b4d9d10715d1019c4d, type: 3}
-  m_PrefabInstance: {fileID: 1728794612}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1728794614
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1728794613}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34fef1d2c8da4b64f8f5e2484f2fd5d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 30
---- !u!4 &1728794615 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6802216874021416896, guid: 798c8616dc5f12b4d9d10715d1019c4d, type: 3}
-  m_PrefabInstance: {fileID: 1728794612}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1741752746
 PrefabInstance:
@@ -27603,6 +27311,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f12b232d87f9b14c8c09973a2efd97d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Spaceship: {fileID: 0}
 --- !u!114 &1978732223
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29412,37 +29121,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1946547488120806734, guid: d2bc5f20a8bed374abd860b9acf20a82, type: 3}
   m_PrefabInstance: {fileID: 2045505206}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2056043497
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2056043498}
-  m_Layer: 0
-  m_Name: FlyPoint (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2056043498
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2056043497}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -20, y: 4, z: -184}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 771173656}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2057850142
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30590,6 +30268,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f12b232d87f9b14c8c09973a2efd97d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Spaceship: {fileID: 0}
 --- !u!114 &2121296840
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -28,6 +28,7 @@ public class Spawner : MonoBehaviour
 
     void FixedUpdate()
     {
+
         if (spawn == false) return;
 
         if (troopsToSpawn.Count > 0 && downtime <= 0)

@@ -17,6 +17,11 @@ public class AIController : MonoBehaviour
             destination = GameObject.FindGameObjectWithTag("Destination");
             agent = GetComponent<NavMeshAgent>();
             agent.SetDestination(destination.transform.position);
+
+            if (Vector3.Distance(transform.position, destination.transform.position) <= 0.2f)
+            {
+                Destroy(gameObject);
+            }
         }
         
     }
