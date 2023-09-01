@@ -1,4 +1,5 @@
 
+using TMPro;
 using UnityEngine;
 
 public class Shop : MonoBehaviour
@@ -17,23 +18,28 @@ public class Shop : MonoBehaviour
 
     public void SelectRocketGuyTroop()
     {
-        Debug.Log("Rocket Guy");
+        //Debug.Log("Rocket Guy");
         buyManager.SelectTroopToBuy(rocketGuy);
     }
 
     public void SelectSpeedsterTroop()
     {
-        Debug.Log("Speedster");
+        //Debug.Log("Speedster");
         buyManager.SelectTroopToBuy(speedster);
     }
 
     public void SelectTankTroop()
     {
-        Debug.Log("Tank");
+        //Debug.Log("Tank");
         buyManager.SelectTroopToBuy(tank);
     }
 
 
+    private void Update()
+    {
+        TextMeshProUGUI text = GetComponent<TextMeshProUGUI>();
+        text.SetText("Money: " + PlayerStats.Money.ToString());
+    }
 
 
 }

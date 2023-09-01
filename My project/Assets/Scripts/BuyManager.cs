@@ -58,10 +58,10 @@ public class BuyManager : MonoBehaviour
         spawner.GetComponent<Spawner>().addTroop(inst);
 
         GameObject troop = (GameObject) Instantiate(troop_to_buy.prefab, shipTile.GetPlacePosition(), inst.troopPrefab.transform.rotation);
-        troop.GetComponent<Troop>().speed = 0f;
+        troop.GetComponent<AIController>().idle = true;
         shipTile.troop = troop;
 
-        Debug.Log("Troop bought! Money Left: " + PlayerStats.Money);
+        //Debug.Log("Troop bought! Money Left: " + PlayerStats.Money);
     }
     public void SelectTroopToBuy(TroopBlueprint troop)
     {

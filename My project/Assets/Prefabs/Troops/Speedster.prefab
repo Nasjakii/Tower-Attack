@@ -9,8 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6726803743515617745}
-  - component: {fileID: 7878633734497468574}
-  m_Layer: 0
+  - component: {fileID: 3741888994041008733}
+  - component: {fileID: -8152451165665553994}
+  m_Layer: 6
   m_Name: Speedster
   m_TagString: Troop
   m_Icon: {fileID: 0}
@@ -33,7 +34,29 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7878633734497468574
+--- !u!195 &3741888994041008733
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3695243909802400788}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 20
+  m_Acceleration: 400
+  avoidancePriority: 50
+  m_AngularSpeed: 400
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!114 &-8152451165665553994
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -42,10 +65,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3695243909802400788}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e52a89064442fb14fadd7f46fab2059e, type: 3}
+  m_Script: {fileID: 11500000, guid: fae0c2e833aa4f6428e9fc1568ea4e7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  idle: 0
 --- !u!1001 &8368190231986785325
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -117,6 +140,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 62a5acfc2de617f4599b0e2a467e25d1, type: 3}
       propertyPath: m_Name
       value: Speedster (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 62a5acfc2de617f4599b0e2a467e25d1, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
