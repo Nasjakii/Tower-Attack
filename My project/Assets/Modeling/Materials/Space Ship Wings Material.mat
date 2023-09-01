@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Rocket Guy Material
+  m_Name: Space Ship Wings Material
   m_Shader: {fileID: 47, guid: 0000000000000000f000000000000000, type: 0}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -43,15 +43,15 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
-        m_Texture: {fileID: 2800000, guid: 9ec722eee44be5a47b8d5d80ea4d0276, type: 3}
+        m_Texture: {fileID: 2800000, guid: 85bbfbb87fa96104e80f30bbfca543de, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 1547ce06d7cf4b64388d60218ff08b1a, type: 3}
+        m_Texture: {fileID: 2800000, guid: bbe76a2a6bbcf544f9443aa8d991be72, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
-        m_Texture: {fileID: 2800000, guid: 38805b5ec62b4404aa27a7492140c46e, type: 3}
+        m_Texture: {fileID: 2800000, guid: 7dd15e3a9464e6748a6e8b1135d0424f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
@@ -63,7 +63,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
-        m_Texture: {fileID: 2800000, guid: da00c4bc106990644aa525852f41445d, type: 3}
+        m_Texture: {fileID: 2800000, guid: d8d81b3749f80ec44946794298c1672e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []

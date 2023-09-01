@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Rocket Guy Material
+  m_Name: Canon Turret Material
   m_Shader: {fileID: 47, guid: 0000000000000000f000000000000000, type: 0}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -43,15 +43,15 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
-        m_Texture: {fileID: 2800000, guid: 9ec722eee44be5a47b8d5d80ea4d0276, type: 3}
+        m_Texture: {fileID: 2800000, guid: 5e4500f26cd3c7e4fb4a37defc846be2, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 1547ce06d7cf4b64388d60218ff08b1a, type: 3}
+        m_Texture: {fileID: 2800000, guid: e267016ef8db2f446843737a23d65370, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
-        m_Texture: {fileID: 2800000, guid: 38805b5ec62b4404aa27a7492140c46e, type: 3}
+        m_Texture: {fileID: 2800000, guid: ace956e3ab4cb2c44a2e129520a40a73, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
@@ -63,7 +63,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
-        m_Texture: {fileID: 2800000, guid: da00c4bc106990644aa525852f41445d, type: 3}
+        m_Texture: {fileID: 2800000, guid: a2b5243f72175344b8bb390a728f53b1, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
