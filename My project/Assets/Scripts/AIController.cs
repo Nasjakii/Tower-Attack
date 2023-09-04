@@ -15,7 +15,8 @@ public class AIController : MonoBehaviour
     {
         if (!idle)
         {
-            animator = GetComponent<Animator>();
+            GameObject bones = transform.GetChild(0).gameObject;
+            animator = bones.GetComponent<Animator>();
             animator.SetBool("Idle", false);
 
             destination = GameObject.FindGameObjectWithTag("Destination");
