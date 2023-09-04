@@ -31,6 +31,7 @@ public class Spawner : MonoBehaviour
 
         if (spawn == false) return;
 
+
         if (troopsToSpawn.Count > 0 && downtime <= 0)
         {
             Instantiate(troopsToSpawn[0], transform.position, troopsToSpawn[0].transform.rotation);
@@ -47,6 +48,7 @@ public class Spawner : MonoBehaviour
 
     public void GenerateTroops()
     {
+
         List<GameObject> generatedTroops = new List<GameObject>();
         List<float> spawnTimeList = new List<float>();
         List<float> pauseTimeList = new List<float>();
@@ -68,6 +70,7 @@ public class Spawner : MonoBehaviour
         spawnTime = spawnTimeList;
         troopsToSpawn.Clear();
         troopsToSpawn = generatedTroops;
+
     }
 
     public void addTroop(SpawnTroop troop)

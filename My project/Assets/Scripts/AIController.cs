@@ -7,6 +7,7 @@ public class AIController : MonoBehaviour
 {
     private GameObject destination;
     private NavMeshAgent agent;
+    private Animator animator;
 
     public bool idle = false;
 
@@ -14,6 +15,9 @@ public class AIController : MonoBehaviour
     {
         if (!idle)
         {
+            animator = GetComponent<Animator>();
+            animator.SetBool("Idle", false);
+
             destination = GameObject.FindGameObjectWithTag("Destination");
             agent = GetComponent<NavMeshAgent>();
             agent.SetDestination(destination.transform.position);
