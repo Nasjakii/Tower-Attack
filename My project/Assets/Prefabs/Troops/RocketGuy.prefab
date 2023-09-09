@@ -1450,6 +1450,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   range: 15
   fireRate: 1
+  damage: 2
   enemyTag: Tower
   bulletPrefab: {fileID: 6808281553001135974, guid: edf834e6530ad0f429c59a19e86f75f0, type: 3}
   firePoint: {fileID: 3249976970085928267}

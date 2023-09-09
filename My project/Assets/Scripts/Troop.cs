@@ -10,6 +10,7 @@ public class Troop : MonoBehaviour
     public float range = 15f;
     public float fireRate = 1f;
     private float fireCountdown = 0f;
+    public float damage = 1f;
 
     [Header("Unity Setup Fields")]
 
@@ -27,6 +28,8 @@ public class Troop : MonoBehaviour
 
     void UpdateTarget()
     {
+        if (firePoint == null) return;
+
         GameObject[] enemies = GameObject.FindGameObjectsWithTag(enemyTag);
         float shortestDistance = Mathf.Infinity;
         GameObject nearestEnemy = null;
@@ -53,8 +56,7 @@ public class Troop : MonoBehaviour
 
     void Update()
     {
-        if (target == null)
-            return;
+        if (target == null) return;
 
         Vector3 dir = target.position - transform.position;
         

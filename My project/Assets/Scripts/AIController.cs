@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -13,6 +14,7 @@ public class AIController : MonoBehaviour
 
     void Start()
     {
+        
         if (!idle)
         {
             GameObject bones = transform.GetChild(0).gameObject;
@@ -23,12 +25,21 @@ public class AIController : MonoBehaviour
             agent = GetComponent<NavMeshAgent>();
             agent.SetDestination(destination.transform.position);
 
-            if (Vector3.Distance(transform.position, destination.transform.position) <= 0.2f)
+            
+        }
+        
+    }
+
+    private void Update()
+    {
+        if (!idle)
+        {
+            if (Vector3.Distance(transform.position, destination.transform.position) <= 2f)
             {
+                destination.GetComponent<Basis>().hp -= GetComponent<Troop>().damage;
                 Destroy(gameObject);
             }
         }
-        
     }
 
 }
