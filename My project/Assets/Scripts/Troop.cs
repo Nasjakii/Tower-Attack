@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 using static UnityEngine.GraphicsBuffer;
 using static UnityEngine.UI.Image;
 
@@ -11,6 +12,7 @@ public class Troop : MonoBehaviour
     public float fireRate = 1f;
     private float fireCountdown = 0f;
     public float damage = 1f;
+    public float speed = 10f;
 
     [Header("Unity Setup Fields")]
 
@@ -20,10 +22,12 @@ public class Troop : MonoBehaviour
     public Transform firePoint;
 
     private Transform target;
+    public float stunned = 0f;
 
     void Start()
     {
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
+        GetComponent<NavMeshAgent>().speed = speed;
     }
 
     void UpdateTarget()
@@ -56,8 +60,16 @@ public class Troop : MonoBehaviour
 
     void Update()
     {
-        if (target == null) return;
 
+        if (stunned > 0f) {
+            GetComponent<NavMeshAgent>().speed = 0f;
+            stunned -= Time.deltaTime;
+        } else
+        {
+            GetComponent<NavMeshAgent>().speed = speed;
+        }
+
+        if (target == null) return;
         Vector3 dir = target.position - transform.position;
         
         if (fireCountdown <= 0f)

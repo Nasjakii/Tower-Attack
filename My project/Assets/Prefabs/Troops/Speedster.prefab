@@ -4201,9 +4201,11 @@ MonoBehaviour:
   range: 15
   fireRate: 1
   damage: 5
+  speed: 20
   enemyTag: Enemy
   bulletPrefab: {fileID: 0}
   firePoint: {fileID: 0}
+  stunned: 0
 --- !u!1 &3760544631785827503
 GameObject:
   m_ObjectHideFlags: 0
