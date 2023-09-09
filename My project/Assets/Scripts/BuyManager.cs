@@ -46,6 +46,7 @@ public class BuyManager : MonoBehaviour
         int beacon_num = shipTile.beaconNumber;
         GameObject beacon = GetBeacon(beacon_num);
         GameObject spawner = GetSpawner(beacon.GetComponent<Beacon>().connectionNumber);
+ 
 
         if (spawner == null) return; //no connected Spawner found
 

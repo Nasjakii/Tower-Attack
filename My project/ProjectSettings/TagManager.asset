@@ -10,6 +10,7 @@ TagManager:
   - Beacon
   - ShipTile
   - Destination
+  - Tower
   layers:
   - Default
   - TransparentFX

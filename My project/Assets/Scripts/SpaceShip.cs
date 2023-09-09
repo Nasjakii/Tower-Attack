@@ -10,7 +10,7 @@ public class SpaceShip : MonoBehaviour
     private bool start_flying = false;
 
     public Transform destination;
-    private bool unloading = false;
+    //private bool unloading = false;
 
     void Update()
     {
@@ -21,7 +21,7 @@ public class SpaceShip : MonoBehaviour
 
             if (Vector3.Distance(transform.position, destination.position) <= 0.2f)
             {
-                unloading = true;
+                //unloading = true;
 
                 GameObject[] spawners = GameObject.FindGameObjectsWithTag("Spawner");
                 foreach (GameObject spawner in spawners)

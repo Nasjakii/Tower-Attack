@@ -9,9 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5464681416666967487}
+  - component: {fileID: 9129803494789405308}
   m_Layer: 0
   m_Name: Missile Turret
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32,6 +33,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9129803494789405308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3567329641487515679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ba8c4c24ce20f24089766a1e63d7398, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  range: 15
+  fireRate: 1
+  enemyTag: Enemy
+  origin: {fileID: 0}
+  turnSpeed: 10
+  bulletPrefab: {fileID: 7683729101588776315, guid: dfea2fc5a3c2f1a48be229ed03fa9d5b, type: 3}
+  firePoint: {fileID: 0}
 --- !u!1001 &712390873692594778
 PrefabInstance:
   m_ObjectHideFlags: 0

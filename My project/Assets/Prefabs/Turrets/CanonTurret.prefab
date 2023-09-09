@@ -178,7 +178,7 @@ GameObject:
   - component: {fileID: 4353922710555750344}
   m_Layer: 0
   m_Name: CanonTurret
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -217,7 +217,7 @@ MonoBehaviour:
   enemyTag: Troop
   origin: {fileID: 8973480777301785305}
   turnSpeed: 10
-  bulletPrefab: {fileID: 5590444553451817763, guid: 29822e2c7f953834aab895bb4fdc80d4, type: 3}
+  bulletPrefab: {fileID: 7683729101588776315, guid: dfea2fc5a3c2f1a48be229ed03fa9d5b, type: 3}
   firePoint: {fileID: 4963539703057641232}
 --- !u!1 &7673139596739811252
 GameObject:
