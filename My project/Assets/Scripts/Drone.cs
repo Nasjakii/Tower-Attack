@@ -1,33 +1,56 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
+using static UnityEngine.UI.Image;
 
-public class CannonTurret : MonoBehaviour
+public class Drone : MonoBehaviour
 {
-    
-
-    [Header("Attributes")]
-
-    public float range = 15f;
+    [Header("Stats")]
+    public float hp;
+    public float range = 8f;
+    public float damage = 1f;
     public float fireRate = 1f;
-    private float fireCountdown = 0f;
-
-    [Header("Unity Setup Fields")]
-
-    public string enemyTag = "Enemy";
-    public Transform origin;
+    public string enemyTag = "Troop";
+    public float speed;
     public float turnSpeed = 10f;
 
+    [Header("Setup")]
     public GameObject bulletPrefab;
     public Transform firePoint;
 
+    private float fireCountdown = 0f;
     private Transform target;
 
+    private Animator animator;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
+        GameObject model = transform.GetChild(0).gameObject;
+        animator = model.GetComponent<Animator>();
+
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
+    }
+
+    void Update()
+    {
+        transform.position -= new Vector3(0, -speed * Time.deltaTime, 0);
+
+        if (target == null)
+            return;
+
+        Vector3 dir = target.position - transform.position;
+        Quaternion lookRotation = Quaternion.LookRotation(dir);
+        transform.rotation = lookRotation;
+
+        if (fireCountdown <= 0f)
+        {
+            Shoot();
+            fireCountdown = 1f / fireRate;
+        }
+
+        fireCountdown -= Time.deltaTime;
     }
 
     void UpdateTarget()
@@ -57,24 +80,7 @@ public class CannonTurret : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        if (target == null)
-            return;
-
-        Vector3 dir = target.position - transform.position;
-        Quaternion lookRotation = Quaternion.LookRotation(-dir);
-        Vector3 rotation = Quaternion.Lerp(origin.rotation, lookRotation, Time.deltaTime * turnSpeed).eulerAngles;
-        origin.rotation = Quaternion.Euler(0f, rotation.y, 0f);
-
-        if (fireCountdown <= 0f)
-        {
-            Shoot();
-            fireCountdown = 1f / fireRate;
-        }
-
-        fireCountdown -= Time.deltaTime;
-    }
+    
 
     void Shoot()
     {
@@ -91,4 +97,5 @@ public class CannonTurret : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, range);
     }
+
 }

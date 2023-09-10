@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Drone Building Material
+  m_Name: Drone Hub Material
   m_Shader: {fileID: 47, guid: 0000000000000000f000000000000000, type: 0}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -43,15 +43,15 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
-        m_Texture: {fileID: 2800000, guid: 09e4a4477c88efa42886a011c74cd88d, type: 3}
+        m_Texture: {fileID: 2800000, guid: 8be77e00e759b6943b78b21707d2c7c0, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: e4c7651c46c71584fa2e15bc872ec057, type: 3}
+        m_Texture: {fileID: 2800000, guid: 97e8e18c226a02744b5d8fca2d5a47a3, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
-        m_Texture: {fileID: 2800000, guid: 34633d14b3a0f5e44a13a2df34352d58, type: 3}
+        m_Texture: {fileID: 2800000, guid: a1caf44a9968de740983b4819e3052b3, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
@@ -63,7 +63,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
-        m_Texture: {fileID: 2800000, guid: 3100bc71107d58c45b28f71d21c11718, type: 3}
+        m_Texture: {fileID: 2800000, guid: ba2b42f71788a8b458333a5e3a76a50c, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
