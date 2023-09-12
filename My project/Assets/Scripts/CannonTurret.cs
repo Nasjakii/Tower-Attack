@@ -10,13 +10,17 @@ public class CannonTurret : MonoBehaviour
 
     public float range = 15f;
     public float fireRate = 1f;
+    public float maxHp = 1f;
     private float fireCountdown = 0f;
+    public float currentHp;
+    
 
     [Header("Unity Setup Fields")]
 
     public string enemyTag = "Enemy";
     public Transform origin;
     public float turnSpeed = 10f;
+    public Healthbar healthbar;
 
     public GameObject bulletPrefab;
     public Transform firePoint;
@@ -28,6 +32,9 @@ public class CannonTurret : MonoBehaviour
     void Start()
     {
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
+
+        currentHp = maxHp;
+        healthbar.UpdateHealtbar(maxHp, currentHp);
     }
 
     void UpdateTarget()

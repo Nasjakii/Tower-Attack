@@ -9,8 +9,10 @@ public class AIController : MonoBehaviour
     private GameObject destination;
     private NavMeshAgent agent;
     private Animator animator;
+    private GameObject healthbarCanvas;
 
     public bool idle = false;
+
 
     void Start()
     {
@@ -26,6 +28,9 @@ public class AIController : MonoBehaviour
             agent.SetDestination(destination.transform.position);
 
             
+        } else
+        {
+            healthbarCanvas = transform.GetChild(1).gameObject;
         }
         
     }
@@ -39,6 +44,9 @@ public class AIController : MonoBehaviour
                 destination.GetComponent<Basis>().hp -= GetComponent<Troop>().damage;
                 Destroy(gameObject);
             }
+        } else
+        {
+            healthbarCanvas.SetActive(false);
         }
     }
 

@@ -9,7 +9,9 @@ public class Bullet : MonoBehaviour
 
     public float speed = 70f;
     public float explosionRadius = 0;
+    public float damage = 1f; //bullet damage
     public GameObject impactEffect;
+
 
     public void Seek(Transform _target)
     {
@@ -24,6 +26,7 @@ public class Bullet : MonoBehaviour
             Destroy(gameObject);
             return;
         }
+
 
         Vector3 dir = target.position - transform.position;
         float distanceThisFrame = speed * Time.deltaTime;
@@ -53,16 +56,24 @@ public class Bullet : MonoBehaviour
             Damage(target);
         }
 
-        Destroy(target.gameObject);
         Destroy(gameObject);
     }
 
-    void Damage(Transform troop)
+    private void Damage(Transform inst)
     {
-        Destroy(troop.gameObject);
+
+        string tag = inst.tag;
+        if (tag == "Troop")
+        {
+            inst.GetComponent<Troop>().getDamage(damage);
+        }
+        if (tag == "Tower")
+        {
+            inst.GetComponent<Tower>().getDamage(damage);
+        }
     }
 
-    void Explode()
+    private void Explode()
     {
         Collider[] colliders = Physics.OverlapSphere(transform.position, explosionRadius);
         foreach (Collider collider in colliders)

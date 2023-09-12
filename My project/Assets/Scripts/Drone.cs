@@ -12,7 +12,6 @@ public class Drone : MonoBehaviour
     public float range = 8f;
     public float damage = 1f;
     public float fireRate = 1f;
-    public string enemyTag = "Troop";
     public float speed;
     public float turnSpeed = 10f;
 
@@ -20,10 +19,11 @@ public class Drone : MonoBehaviour
     public GameObject bulletPrefab;
     public Transform firePoint;
 
-    private float fireCountdown = 0f;
+    
     private Transform target;
-
     private Animator animator;
+    private string enemyTag = "Troop";
+    private float fireCountdown = 0f;
 
     private void Start()
     {
@@ -78,9 +78,6 @@ public class Drone : MonoBehaviour
             target = null;
         }
     }
-
-    // Update is called once per frame
-    
 
     void Shoot()
     {

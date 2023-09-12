@@ -5,12 +5,12 @@ using UnityEngine.AI;
 using static UnityEngine.GraphicsBuffer;
 using static UnityEngine.UI.Image;
 
-public class Troop : MonoBehaviour
+public class Tower : MonoBehaviour
 {
     [Header("Stats")]
     public float fireRate = 1f;
-    public float damage = 1f; //damage when running into basis
-    public float speed = 10f;
+    private float fireTimer = 0f;
+    public float damage = 1f;
     public float maxHp = 10f;
 
     [SerializeField] private Healthbar healthbar;
@@ -20,31 +20,31 @@ public class Troop : MonoBehaviour
     [HideInInspector]
     public GameObject bulletPrefab;
     [HideInInspector]
+    public Transform rotationPoint;
+    [HideInInspector]
     public Transform firePoint;
     [HideInInspector]
     public float range = 15f;
-
     [HideInInspector]
-    public float stunned = 0f;
+    public float turnSpeed = 15f;
 
-    private Transform target;
-    private string enemyTag = "Tower";
     private float currentHp;
     private float fireCountdown = 0f;
-    private float baseSpeed;
+    private Transform target;
+    private string enemyTag = "Troop";
 
     void Start()
     {
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
-        GetComponent<NavMeshAgent>().speed = speed;
 
-        baseSpeed = speed;
         currentHp = maxHp;
         healthbar.UpdateHealtbar(maxHp, currentHp);
     }
 
     void UpdateTarget()
     {
+
+        //if can shoot
         if (!CanShoot) return;
 
         GameObject[] enemies = GameObject.FindGameObjectsWithTag(enemyTag);
@@ -75,27 +75,20 @@ public class Troop : MonoBehaviour
     {
         if (currentHp <= 0f) Destroy(gameObject);
 
-        if (stunned > 0f) {
-            GetComponent<NavMeshAgent>().speed = 0f;
-            stunned -= Time.deltaTime;
-        } else
-        {
-            GetComponent<NavMeshAgent>().speed = speed;
-        }
 
-        speed = baseSpeed;
         if (target == null) return;
-        speed = 0f;
-
         Vector3 dir = target.position - transform.position;
-        
-        if (fireCountdown <= 0f)
+        Quaternion lookRotation = Quaternion.LookRotation(-dir);
+        Vector3 rotation = Quaternion.Lerp(rotationPoint.rotation, lookRotation, Time.deltaTime * turnSpeed).eulerAngles;
+        rotationPoint.rotation = Quaternion.Euler(0f, rotation.y, 0f);
+
+        if (fireTimer <= 0f)
         {
             Shoot();
-            fireCountdown = 1f / fireRate;
+            fireTimer = 1f / fireRate;
         }
 
-        fireCountdown -= Time.deltaTime;
+        fireTimer -= Time.deltaTime;
     }
 
     
@@ -123,5 +116,5 @@ public class Troop : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, range);
     }
 
-    
+
 }
