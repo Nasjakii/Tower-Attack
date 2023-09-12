@@ -40,6 +40,15 @@ public class ShipTile : MonoBehaviour
 
     }
 
+    private void OnMouseOver()
+    {
+        if(Input.GetMouseButtonDown(1))
+        {
+            if (this.troop == null) return;
+            buyManager.DeleteTroopOn(this);
+        }
+    }
+
     public Vector3 GetPlacePosition()
     {
         return transform.position + positionOffset;

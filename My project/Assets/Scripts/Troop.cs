@@ -8,7 +8,6 @@ using static UnityEngine.UI.Image;
 public class Troop : MonoBehaviour
 {
     [Header("Stats")]
-    public float fireRate = 1f;
     public float damage = 1f; //damage when running into basis
     public float speed = 10f;
     public float maxHp = 10f;
@@ -23,6 +22,8 @@ public class Troop : MonoBehaviour
     public Transform firePoint;
     [HideInInspector]
     public float range = 15f;
+    [HideInInspector]
+    public float fireRate = 1f;
 
     [HideInInspector]
     public float stunned = 0f;

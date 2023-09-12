@@ -83,15 +83,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 412fe1e6eefec954ca81f31e22c8cc57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireRate: 1
   damage: 1
-  speed: 10
-  maxHp: 10
+  speed: 5
+  maxHp: 20
   healthbar: {fileID: 8396922328666092999}
   CanShoot: 0
   bulletPrefab: {fileID: 0}
   firePoint: {fileID: 0}
   range: 15
+  fireRate: 1
   stunned: 0
 --- !u!1001 &603314224289485812
 PrefabInstance:

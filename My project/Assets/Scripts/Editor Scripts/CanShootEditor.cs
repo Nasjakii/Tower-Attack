@@ -18,6 +18,7 @@ public class CanShootEditor : Editor
             EditorGUILayout.PropertyField(serializedObject.FindProperty("bulletPrefab"));
             EditorGUILayout.PropertyField(serializedObject.FindProperty("firePoint"));
             EditorGUILayout.PropertyField(serializedObject.FindProperty("range"));
+            EditorGUILayout.PropertyField(serializedObject.FindProperty("fireRate"));
         }
 
         serializedObject.ApplyModifiedProperties();

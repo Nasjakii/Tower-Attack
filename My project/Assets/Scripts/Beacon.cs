@@ -4,13 +4,14 @@ using UnityEngine.EventSystems;
 
 public class Beacon : MonoBehaviour, IPointerDownHandler
 {
-    public Spawner connectedSpawner;
+    
     public int connectionNumber = 0;
     public int beaconNumber;
 
+    [HideInInspector]
+    public Spawner connectedSpawner;
+
     private Renderer rend;
-
-
     private int spawnerCount;
 
     void Start()
@@ -30,9 +31,6 @@ public class Beacon : MonoBehaviour, IPointerDownHandler
 
         connectionNumber++;
         connectionNumber = connectionNumber % spawnerCount;
-
-        
-
 
         switchColor(connectionNumber, rend);
 

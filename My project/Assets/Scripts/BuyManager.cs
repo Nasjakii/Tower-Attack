@@ -64,6 +64,13 @@ public class BuyManager : MonoBehaviour
 
         //Debug.Log("Troop bought! Money Left: " + PlayerStats.Money);
     }
+
+    public void DeleteTroopOn(ShipTile shipTile)
+    {
+        Destroy(shipTile.troop);
+        shipTile.troop = null;
+    }
+
     public void SelectTroopToBuy(TroopBlueprint troop)
     {
         troop_to_buy = troop;
