@@ -20,6 +20,7 @@ public class CanShootEditorTower : Editor
             EditorGUILayout.PropertyField(serializedObject.FindProperty("firePoint"));
             EditorGUILayout.PropertyField(serializedObject.FindProperty("range"));
             EditorGUILayout.PropertyField(serializedObject.FindProperty("turnSpeed"));
+            EditorGUILayout.PropertyField(serializedObject.FindProperty("fireRate"));
         }
 
         serializedObject.ApplyModifiedProperties();

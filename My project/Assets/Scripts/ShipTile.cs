@@ -1,4 +1,5 @@
 
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using static UnityEngine.GraphicsBuffer;
@@ -8,12 +9,13 @@ public class ShipTile : MonoBehaviour
 
     public Vector3 positionOffset;
 
-    [Header("Optional Pre Building")]
-    public GameObject troop;
-
     [Header("Connected Beacon")]
     public int beaconNumber = 0;
 
+    [HideInInspector]
+    public GameObject troop;
+    
+    public int tileIndex;
 
     private Renderer rend;
 
@@ -24,6 +26,8 @@ public class ShipTile : MonoBehaviour
         UpdateConnection();
         
         buyManager = BuyManager.instance;
+
+        
     }
 
     private void OnMouseDown()

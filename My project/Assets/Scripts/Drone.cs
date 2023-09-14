@@ -8,37 +8,51 @@ using static UnityEngine.UI.Image;
 public class Drone : MonoBehaviour
 {
     [Header("Stats")]
-    public float hp;
+    public float maxHp;
     public float range = 8f;
     public float damage = 1f;
     public float fireRate = 1f;
     public float speed;
     public float turnSpeed = 10f;
+    public Healthbar healthbar;
 
     [Header("Setup")]
     public GameObject bulletPrefab;
     public Transform firePoint;
 
-    
+    [HideInInspector]
+    public GameObject hub;
+    [HideInInspector]
+    public float currentHp;
+
     private Transform target;
-    private Animator animator;
     private string enemyTag = "Troop";
     private float fireCountdown = 0f;
 
     private void Start()
     {
         GameObject model = transform.GetChild(0).gameObject;
-        animator = model.GetComponent<Animator>();
-
+        currentHp = maxHp;
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
     }
 
     void Update()
     {
-        transform.position -= new Vector3(0, -speed * Time.deltaTime, 0);
+        if (currentHp <= 0f)
+        {
+            hub.GetComponent<DroneHub>().Remove(gameObject);
+            Destroy(gameObject);
+        }
+            
 
-        if (target == null)
+        
+
+        if (target == null) //no target -> just move
+        {
+            if (transform.position.y < 10) transform.position -= new Vector3(0, -speed * Time.deltaTime, 0);
             return;
+        }
+            
 
         Vector3 dir = target.position - transform.position;
         Quaternion lookRotation = Quaternion.LookRotation(dir);
@@ -77,6 +91,13 @@ public class Drone : MonoBehaviour
         {
             target = null;
         }
+    }
+
+    public void getDamage(float amount)
+    {
+        currentHp -= amount;
+        healthbar.UpdateHealtbar(maxHp, currentHp);
+
     }
 
     void Shoot()

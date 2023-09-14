@@ -8,9 +8,6 @@ using static UnityEngine.UI.Image;
 public class Tower : MonoBehaviour
 {
     [Header("Stats")]
-    public float fireRate = 1f;
-    private float fireTimer = 0f;
-    public float damage = 1f;
     public float maxHp = 10f;
 
     [SerializeField] private Healthbar healthbar;
@@ -27,11 +24,14 @@ public class Tower : MonoBehaviour
     public float range = 15f;
     [HideInInspector]
     public float turnSpeed = 15f;
+    [HideInInspector]
+    public float fireRate = 1f;
 
     private float currentHp;
     private float fireCountdown = 0f;
     private Transform target;
     private string enemyTag = "Troop";
+    private float fireTimer = 0f;
 
     void Start()
     {

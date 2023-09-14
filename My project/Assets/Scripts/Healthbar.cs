@@ -32,6 +32,8 @@ public class Healthbar : MonoBehaviour
 
     private void Update()
     {
+
+        if (gameObject.layer == 5) return;
         transform.rotation = Quaternion.LookRotation(transform.position - cam.transform.position);
     }
 

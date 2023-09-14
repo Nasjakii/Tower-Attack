@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6762809092920366036}
   - component: {fileID: 4136008369432305017}
+  - component: {fileID: 6357701958540866890}
   m_Layer: 0
   m_Name: Railgun
   m_TagString: Tower
@@ -47,16 +48,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37afec50dd4e27e4ea0b54e5bec58692, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireRate: 1
-  damage: 1
   maxHp: 10
   healthbar: {fileID: 4252918953973380548}
   CanShoot: 1
-  bulletPrefab: {fileID: 7683729101588776315, guid: dfea2fc5a3c2f1a48be229ed03fa9d5b, type: 3}
+  bulletPrefab: {fileID: 5121043399516625810, guid: 29822e2c7f953834aab895bb4fdc80d4, type: 3}
   rotationPoint: {fileID: 7201135818944567852}
   firePoint: {fileID: 4617105094541641635}
   range: 15
   turnSpeed: 15
+  fireRate: 0.5
+--- !u!65 &6357701958540866890
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2934954407635642523}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3545609571065202727
 GameObject:
   m_ObjectHideFlags: 0

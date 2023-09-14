@@ -5,16 +5,11 @@ using UnityEngine;
 public class BuyManager : MonoBehaviour
 {
     public static BuyManager instance;
-    
 
-    public List<GameObject> spawners = new List<GameObject>();
+
     public void Start()
     {
-        GameObject[] instances = GameObject.FindGameObjectsWithTag("Spawner");
-        foreach (GameObject instance in instances)
-        {
-            spawners.Add(instance);
-        }
+        
     }
 
 
@@ -45,10 +40,8 @@ public class BuyManager : MonoBehaviour
 
         int beacon_num = shipTile.beaconNumber;
         GameObject beacon = GetBeacon(beacon_num);
-        GameObject spawner = GetSpawner(beacon.GetComponent<Beacon>().connectionNumber);
- 
 
-        if (spawner == null) return; //no connected Spawner found
+        if (beacon == null) return; //no connected beacon found
 
 
         SpawnTroop inst = new SpawnTroop();
@@ -56,19 +49,20 @@ public class BuyManager : MonoBehaviour
         inst.count = 5;
         inst.time_between_spawns = 0.5f;
         inst.time_after_spawn = 2;
-        spawner.GetComponent<Spawner>().addTroop(inst);
+        inst.spawn_index = shipTile.tileIndex;
+        beacon.GetComponent<Beacon>().addTroop(inst);
 
-        GameObject troop = (GameObject) Instantiate(troop_to_buy.prefab, shipTile.GetPlacePosition(), inst.troopPrefab.transform.rotation);
+        GameObject troop = (GameObject)Instantiate(troop_to_buy.prefab, shipTile.GetPlacePosition(), inst.troopPrefab.transform.rotation);
         troop.GetComponent<AIController>().idle = true;
         shipTile.troop = troop;
 
-        //Debug.Log("Troop bought! Money Left: " + PlayerStats.Money);
     }
 
     public void DeleteTroopOn(ShipTile shipTile)
     {
         Destroy(shipTile.troop);
         shipTile.troop = null;
+        //delete from beacon list
     }
 
     public void SelectTroopToBuy(TroopBlueprint troop)
@@ -96,18 +90,6 @@ public class BuyManager : MonoBehaviour
         return null;
     }
 
-    private GameObject GetSpawner(int connection_number)
-    {
-        for (int i = 0; i < spawners.Count; i++)
-        {
-            if (spawners[i].GetComponent<Spawner>().spawnNumber == connection_number)
-            {
-                return spawners[i];
-
-            }
-        }
-        return null;
-    }
 
 
 

@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class DroneHub : MonoBehaviour
 {
-    [Header("Stats")]
-    public float hp;
-
     [Header("Spawn")]
     public GameObject drone;
     public float spawn_cooldown;
@@ -19,6 +16,7 @@ public class DroneHub : MonoBehaviour
     private float animation_time_min = 2f;
     private float animation_time_max = 10f;
 
+    
     private List<GameObject> drones = new List<GameObject>();
 
     private void Start()
@@ -38,15 +36,8 @@ public class DroneHub : MonoBehaviour
             {
                 spawn_timer = spawn_cooldown;
                 GameObject inst = Instantiate(drone, transform.position - new Vector3(0, 3, 0), Quaternion.identity);
+                inst.GetComponent<Drone>().hub = gameObject;
                 drones.Add(inst);
-            }
-            else
-            {
-                for (int i = 0; i < drones.Count; i++)
-                {
-                    //delete destroyed objects from list
-                    //TODO
-                }
             }
         }
             
@@ -66,5 +57,13 @@ public class DroneHub : MonoBehaviour
             }
         }
         
+    }
+
+    public void Remove(GameObject drone)
+    {
+        Debug.Log("remove");
+        if (drone.GetComponent<Drone>().hub == null) return;
+        Debug.Log("delete");
+        drones.Remove(drone);
     }
 }

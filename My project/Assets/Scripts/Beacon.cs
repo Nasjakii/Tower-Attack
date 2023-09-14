@@ -1,41 +1,66 @@
 
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class Beacon : MonoBehaviour, IPointerDownHandler
 {
-    
+
     public int connectionNumber = 0;
     public int beaconNumber;
 
     [HideInInspector]
-    public Spawner connectedSpawner;
+    public GameObject connectedSpawner;
 
     private Renderer rend;
-    private int spawnerCount;
 
+    public GameObject[] spawners;
+    private int spawnerCount;
+    public GameObject[] shipTiles;
+    private int shipTileCount;
+
+    public List<SpawnTroop> spawnTroops = new List<SpawnTroop>(); //middle man to safe the troops
     void Start()
     {
-        GameObject[] instances = GameObject.FindGameObjectsWithTag("Spawner");
-        spawnerCount = instances.Length;
+        spawners = GameObject.FindGameObjectsWithTag("Spawner");
+        spawnerCount = spawners.Length;
+        connectedSpawner = GetSpawner(connectionNumber, spawners);
+
+        shipTiles = GameObject.FindGameObjectsWithTag("ShipTile");
+        shipTileCount = shipTiles.Length;
 
         GameObject glow = transform.GetChild(0).gameObject;
         rend = glow.GetComponent<Renderer>();
 
         switchColor(connectionNumber, rend);
+
+        
     }
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        //Debug.Log("click");
-
         connectionNumber++;
         connectionNumber = connectionNumber % spawnerCount;
 
         switchColor(connectionNumber, rend);
 
-        GameObject[] shipTiles = GameObject.FindGameObjectsWithTag("ShipTile");
+        connectedSpawner = GetSpawner(connectionNumber, spawners);
+
         foreach (GameObject shipTile in shipTiles) { shipTile.GetComponent<ShipTile>().UpdateConnection(); }
+    }
+
+    public void addTroop(SpawnTroop troop)
+    {
+        spawnTroops.Add(troop);
+    }
+
+    public void sendTroopData()
+    {
+        List<SpawnTroop> sendTroops = spawnTroops.OrderBy(o=>o.spawn_index).ToList();
+
+        connectedSpawner.GetComponent<Spawner>().addTroops(sendTroops);
+        
     }
 
     private void switchColor(int number, Renderer _rend)
@@ -53,5 +78,18 @@ public class Beacon : MonoBehaviour, IPointerDownHandler
                 break;
 
         }
+    }
+
+    private GameObject GetSpawner(int connection_number, GameObject[] _spawners)
+    {
+        for (int i = 0; i < _spawners.Length; i++)
+        {
+            if (_spawners[i].GetComponent<Spawner>().spawnNumber == connection_number)
+            {
+                return _spawners[i];
+
+            }
+        }
+        return null;
     }
 }

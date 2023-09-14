@@ -1,5 +1,6 @@
 
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Spawner : MonoBehaviour
@@ -22,7 +23,6 @@ public class Spawner : MonoBehaviour
     private void Start()
     {
         rend = GetComponent<Renderer>();
-        GenerateTroops();
         switchColor(spawnNumber, rend);
     }
 
@@ -30,7 +30,7 @@ public class Spawner : MonoBehaviour
     {
 
         if (spawn == false) return;
-
+        
 
         if (troopsToSpawn.Count > 0 && downtime <= 0)
         {
@@ -46,45 +46,22 @@ public class Spawner : MonoBehaviour
         }
     }
 
-    public void GenerateTroops()
+    public void addTroops(List<SpawnTroop> troopList)
     {
-
-        List<GameObject> generatedTroops = new List<GameObject>();
-        List<float> spawnTimeList = new List<float>();
-        List<float> pauseTimeList = new List<float>();
-        for (int i = 0; i < spawnTroops.Count; i++)
+        foreach(SpawnTroop troop in troopList)
         {
-            for(int i2 = 0; i2 < spawnTroops[i].count; i2++)
+
+            for (int i = 0; i < troop.count; i++)
             {
-                generatedTroops.Add(spawnTroops[i].troopPrefab);
-                spawnTimeList.Add(spawnTroops[i].time_between_spawns);
-                pauseTimeList.Add(0f);
+                troopsToSpawn.Add(troop.troopPrefab);
+                spawnTime.Add(troop.time_between_spawns);
+                pauseTime.Add(0f);
+
+
             }
-            pauseTimeList.RemoveAt(pauseTimeList.Count - 1);
-            pauseTimeList.Add(spawnTroops[i].time_after_spawn);
-            
+            pauseTime.RemoveAt(pauseTime.Count - 1);
+            pauseTime.Add(troop.time_after_spawn);
         }
-        pauseTime.Clear();
-        pauseTime = pauseTimeList;
-        spawnTime.Clear();
-        spawnTime = spawnTimeList;
-        troopsToSpawn.Clear();
-        troopsToSpawn = generatedTroops;
-
-    }
-
-    public void addTroop(SpawnTroop troop)
-    {
-        for (int i = 0;i < troop.count;i++)
-        {
-            troopsToSpawn.Add(troop.troopPrefab);
-            spawnTime.Add(troop.time_between_spawns);
-            pauseTime.Add(0f);
-                
-        }
-        pauseTime.RemoveAt(pauseTime.Count - 1);
-        pauseTime.Add(troop.time_after_spawn);
-
 
     }
 
@@ -114,6 +91,7 @@ public class SpawnTroop
 {
     public GameObject troopPrefab;
     public int count;
+    public int spawn_index; //defined by tile_index in shipTile
     public float time_between_spawns;
     public float time_after_spawn;
 }

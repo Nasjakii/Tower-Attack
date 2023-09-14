@@ -5,19 +5,24 @@ using UnityEngine;
 public class Basis : MonoBehaviour
 {
     public float hp = 100f;
+    public Healthbar healthbar;
 
-    // Start is called before the first frame update
+    [HideInInspector]
+    public float curr_hp;
     void Start()
     {
-        
+        curr_hp = hp;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (hp <= 0f)
+        if (curr_hp <= 0f)
         {
             Debug.Log("you win!");
+        } else
+        {
+            healthbar.UpdateHealtbar(hp, curr_hp);
         }
     }
 }

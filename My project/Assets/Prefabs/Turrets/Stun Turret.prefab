@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5072022420732160967}
   - component: {fileID: 289562648274322527}
   - component: {fileID: 6846915463692615602}
+  - component: {fileID: 7277616311903364656}
   m_Layer: 0
   m_Name: Stun Turret
   m_TagString: Tower
@@ -47,7 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 958182b72904e324fbc070721b78b0e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 5
+  range: 7
   cooldown: 3
   stunDuration: 1
   shockwave: {fileID: 2425745226368626136, guid: aad1e8778fe9f7b4dab7249d34cb6338, type: 3}
@@ -64,8 +65,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37afec50dd4e27e4ea0b54e5bec58692, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireRate: 1
-  damage: 1
   maxHp: 10
   healthbar: {fileID: 5213210343032570040}
   CanShoot: 0
@@ -74,6 +73,28 @@ MonoBehaviour:
   firePoint: {fileID: 0}
   range: 15
   turnSpeed: 15
+  fireRate: 1
+--- !u!65 &7277616311903364656
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1206413144040142062}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &3783499118393845387
 PrefabInstance:
   m_ObjectHideFlags: 0

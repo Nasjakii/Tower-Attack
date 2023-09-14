@@ -41,7 +41,7 @@ public class AIController : MonoBehaviour
         {
             if (Vector3.Distance(transform.position, destination.transform.position) <= 2f)
             {
-                destination.GetComponent<Basis>().hp -= GetComponent<Troop>().damage;
+                destination.GetComponent<Basis>().curr_hp -= GetComponent<Troop>().damage;
                 Destroy(gameObject);
             }
         } else

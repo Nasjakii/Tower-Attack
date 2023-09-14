@@ -8,8 +8,13 @@ public class PlayButton : MonoBehaviour
     
     public void startShip()
     {
+        GameObject[] beacons = GameObject.FindGameObjectsWithTag("Beacon");
+        foreach (GameObject beacon in beacons)
+        {
+            beacon.GetComponent<Beacon>().sendTroopData();
+        }
 
-        GameObject[] spawners = GameObject.FindGameObjectsWithTag("Spawner");
+            GameObject[] spawners = GameObject.FindGameObjectsWithTag("Spawner");
         foreach (GameObject spawner in spawners)
         {
             Vector3 spawnPos = new Vector3(0,0,-200);

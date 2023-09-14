@@ -176,6 +176,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3914408159860717607}
   - component: {fileID: 5908917497522301954}
+  - component: {fileID: 7341268135151087727}
   m_Layer: 0
   m_Name: CanonTurret
   m_TagString: Tower
@@ -213,16 +214,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37afec50dd4e27e4ea0b54e5bec58692, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireRate: 1
-  damage: 1
   maxHp: 10
   healthbar: {fileID: 277517856681440805}
   CanShoot: 1
-  bulletPrefab: {fileID: 7683729101588776315, guid: dfea2fc5a3c2f1a48be229ed03fa9d5b, type: 3}
+  bulletPrefab: {fileID: 5121043399516625810, guid: 29822e2c7f953834aab895bb4fdc80d4, type: 3}
   rotationPoint: {fileID: 8973480777301785305}
   firePoint: {fileID: 2723338885339663527}
   range: 15
   turnSpeed: 15
+  fireRate: 1
+--- !u!65 &7341268135151087727
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7299943434289433667}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7673139596739811252
 GameObject:
   m_ObjectHideFlags: 0

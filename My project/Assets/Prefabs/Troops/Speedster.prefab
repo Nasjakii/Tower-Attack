@@ -5121,15 +5121,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 412fe1e6eefec954ca81f31e22c8cc57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 15
-  fireRate: 1
-  damage: 5
-  speed: 20
+  damage: 3
+  speed: 15
   maxHp: 5
-  enemyTag: Enemy
+  healthbar: {fileID: 3444642614179118255}
+  CanShoot: 0
   bulletPrefab: {fileID: 0}
   firePoint: {fileID: 0}
-  healthbar: {fileID: 3444642614179118255}
+  range: 15
+  fireRate: 1
   stunned: 0
 --- !u!1 &8211056562590308853
 GameObject:
