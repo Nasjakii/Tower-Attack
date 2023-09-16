@@ -28,7 +28,6 @@ public class Tower : MonoBehaviour
     public float fireRate = 1f;
 
     private float currentHp;
-    private float fireCountdown = 0f;
     private Transform target;
     private string enemyTag = "Troop";
     private float fireTimer = 0f;

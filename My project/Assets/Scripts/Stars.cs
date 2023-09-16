@@ -27,7 +27,7 @@ public class Stars : MonoBehaviour
         {
             star1.sprite = star_full;
         }
-        if (score >= 2)
+        if (score >= 3)
         {
             star2.sprite = star_full;
         }

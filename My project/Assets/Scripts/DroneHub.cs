@@ -16,7 +16,6 @@ public class DroneHub : MonoBehaviour
     private float animation_time_min = 2f;
     private float animation_time_max = 10f;
 
-    private bool gameStart = false;
     private GameObject spawner;
     
     private List<GameObject> drones = new List<GameObject>();

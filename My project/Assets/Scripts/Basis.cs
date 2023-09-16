@@ -49,7 +49,7 @@ public class Basis : MonoBehaviour
             if (troops_left > 0) break; 
         }
         
-        if(troops_left == 0) //check existring troops
+        if(troops_left == 0) //check existing troops
         {
             GameObject[] troops = GameObject.FindGameObjectsWithTag("Troop");
             foreach (GameObject troop in troops)
