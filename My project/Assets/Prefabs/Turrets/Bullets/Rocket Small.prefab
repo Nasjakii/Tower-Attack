@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6901441451928988896}
   - component: {fileID: 5781382779659954389}
   m_Layer: 0
-  m_Name: Rocket
+  m_Name: Rocket Small
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -55,7 +55,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74686b40ee9c1c8448b38e3d7969a26a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
+  speed: 30
   explosionRadius: 3
   damage: 5
   impactEffect: {fileID: 2400298768665699391, guid: f17710ff943605548b20e208c72d009a, type: 3}

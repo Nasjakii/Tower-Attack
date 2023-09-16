@@ -16,6 +16,8 @@ public class DroneHub : MonoBehaviour
     private float animation_time_min = 2f;
     private float animation_time_max = 10f;
 
+    private bool gameStart = false;
+    private GameObject spawner;
     
     private List<GameObject> drones = new List<GameObject>();
 
@@ -23,12 +25,16 @@ public class DroneHub : MonoBehaviour
     {
         GameObject model = transform.GetChild(0).gameObject;
         animator = model.GetComponent<Animator>();
+        spawner = GameObject.FindGameObjectWithTag("Spawner");
 
         spawn_timer = spawn_cooldown;
     }
 
     private void Update()
     {
+        if (!spawner.GetComponent<Spawner>().spawn) return;
+        
+
         spawn_timer -= Time.deltaTime;
         if (spawn_timer <= 0)
         {

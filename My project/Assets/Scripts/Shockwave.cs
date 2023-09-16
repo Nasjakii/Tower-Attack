@@ -54,11 +54,4 @@ public class Shockwave : MonoBehaviour
         StartCoroutine(Blast());
     }
 
-    public void Update()
-    {
-        if (Input.GetKeyDown("space"))
-        {
-            StartCoroutine(Blast());
-        }
-    }
 }

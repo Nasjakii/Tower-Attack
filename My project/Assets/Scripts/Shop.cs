@@ -14,6 +14,15 @@ public class Shop : MonoBehaviour
     private void Start()
     {
         buyManager = BuyManager.instance;
+
+        TextMeshProUGUI text0 = transform.GetChild(0).GetChild(0).gameObject.GetComponent<TextMeshProUGUI>();
+        TextMeshProUGUI text1 = transform.GetChild(1).GetChild(0).gameObject.GetComponent<TextMeshProUGUI>();
+        TextMeshProUGUI text2 = transform.GetChild(2).GetChild(0).gameObject.GetComponent<TextMeshProUGUI>();
+        
+        text0.SetText(text0.text + rocketGuy.cost);
+        text1.SetText(text1.text + speedster.cost);
+        text2.SetText(text2.text + tank.cost);
+        
     }
 
     public void SelectRocketGuyTroop()
@@ -39,6 +48,7 @@ public class Shop : MonoBehaviour
     {
         TextMeshProUGUI text = GetComponent<TextMeshProUGUI>();
         text.SetText("Money: " + PlayerStats.Money.ToString());
+
     }
 
 

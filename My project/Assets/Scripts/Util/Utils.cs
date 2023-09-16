@@ -1,43 +1,55 @@
 using UnityEngine;
+using System.IO;
 using System.Collections;
 using Unity.VisualScripting;
 
 public class Utils: MonoBehaviour
 {
-    public static void SetInt(string key, int value)
+    private GameData gameData;
+
+    private string path = "";
+    private string persistentPath = "";
+
+    void Start()
     {
-        PlayerPrefs.SetInt(key, value);
-    }
-    public static int GetInt(string key)
-    {
-        return PlayerPrefs.GetInt(key);
+        CreateData(false);
+        SetPaths();
     }
 
-
-    public static void SetSting(string key, string value)
+    private void CreateData(bool firstStart)
     {
-        PlayerPrefs.SetString(key, value);
-    }
-    public static string GetString(string key)
-    {
-        return PlayerPrefs.GetString(key);
+        gameData = new GameData(firstStart);
     }
 
+    
 
-    public static void SetBool(string key, bool value)
+    private void SetPaths()
     {
-        if (value)
-        {
-            PlayerPrefs.SetInt(key, 1);
-        } else
-        {
-            PlayerPrefs.SetInt(key, 0);
-        }
-        
+        path = Application.dataPath + Path.AltDirectorySeparatorChar + "SaveData.json";
+        persistentPath = Application.persistentDataPath + Path.AltDirectorySeparatorChar + "SaveData.json";
     }
-    public static bool GetBool(string key)
+    
+    public void SaveData()
     {
-        return PlayerPrefs.GetInt(key) == 1;
+        string savePath = path;
+
+        Debug.Log("Saving Data at " + savePath);
+        string json = JsonUtility.ToJson(gameData);
+        Debug.Log(json);
+
+        using StreamWriter writer = new StreamWriter(savePath);
+        writer.Write(json);
+
     }
 
+    public GameData LoadData()
+    {
+        using StreamReader reader = new StreamReader(path);
+        string json = reader.ReadToEnd();
+
+        GameData data = JsonUtility.FromJson<GameData>(json);
+        Debug.Log(data.ToString());
+
+        return data;
+    }
 }

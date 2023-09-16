@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayButton : MonoBehaviour
 {
     public GameObject Spaceship;
+
     
     public void startShip()
     {
@@ -14,7 +15,7 @@ public class PlayButton : MonoBehaviour
             beacon.GetComponent<Beacon>().sendTroopData();
         }
 
-            GameObject[] spawners = GameObject.FindGameObjectsWithTag("Spawner");
+        GameObject[] spawners = GameObject.FindGameObjectsWithTag("Spawner");
         foreach (GameObject spawner in spawners)
         {
             Vector3 spawnPos = new Vector3(0,0,-200);
@@ -22,5 +23,7 @@ public class PlayButton : MonoBehaviour
             ship.GetComponent<SpaceShip>().setFlying(true);
             ship.GetComponent<SpaceShip>().destination = spawner.transform;
         }
+
+
     }
 }

@@ -16,13 +16,12 @@ public class Tutorial : MonoBehaviour
 
     private void Start()
     {
-        PlayerPrefs.DeleteAll();
+
         button = GameObject.FindGameObjectWithTag("Attack Button");
-        
-        if (Utils.GetBool("firstLaunch"))
+        if (PlayerPrefs.GetInt("FIRSTTIMEOPENING", 1) == 1)
         {
             Debug.Log("first");
-            Utils.SetBool("firstLaunch", false);
+            PlayerPrefs.SetInt("FIRSTTIMEOPENING", 0);
             gameObject.SetActive(true);
             button.SetActive(false);
 
@@ -39,10 +38,7 @@ public class Tutorial : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            UnityEngine.SceneManagement.SceneManager.LoadScene(0);
-        }
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
             textfieldIndex++;

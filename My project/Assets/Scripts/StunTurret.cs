@@ -17,13 +17,18 @@ public class StunTurret : MonoBehaviour
     public GameObject shockwave;
     private GameObject shockwaveSpawner;
     public string enemyTag = "Troop";
+    private GameObject spawner;
 
     public void Start()
     {
         shockwaveSpawner = Instantiate(shockwave, transform.position, Quaternion.Euler(new Vector3(90, 0, 0)));
+
+        spawner = GameObject.FindGameObjectWithTag("Spawner");
     }
     public void Update()
     {
+        if (!spawner.GetComponent<Spawner>().spawn) return;
+
         if (fireCountdown <= 0f)
         {
             Shoot();

@@ -13,4 +13,24 @@ public class MainMenu : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void LoadScene(string level_name)
+    {
+        if (Application.CanStreamedLevelBeLoaded("sceneName"))
+        {
+            SceneManager.LoadScene(level_name);
+        }
+        else
+        {
+            Debug.LogError("Wrong scene name: " + level_name);
+        }
+        
+    }
+
+    
+
+    public void FlushSave()
+    {
+        PlayerPrefs.DeleteAll();  
+    }
 }

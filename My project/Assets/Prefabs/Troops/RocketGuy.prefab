@@ -4254,7 +4254,7 @@ MonoBehaviour:
   maxHp: 5
   healthbar: {fileID: 2923363280107825172}
   CanShoot: 1
-  bulletPrefab: {fileID: 6808281553001135974, guid: edf834e6530ad0f429c59a19e86f75f0, type: 3}
+  bulletPrefab: {fileID: 6808281553001135974, guid: b7bd07ec8700f4f43a655b3dea3dc284, type: 3}
   firePoint: {fileID: 5971348351219025894}
   range: 15
   fireRate: 1

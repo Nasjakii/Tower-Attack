@@ -6,7 +6,6 @@ using static UnityEngine.GraphicsBuffer;
 public class MainCamera : MonoBehaviour
 {
 
-    private bool doMovement = true;
     public float ySpeed = 10f;
     private float minY = 10f;
     private float maxY = 80f;
@@ -20,74 +19,64 @@ public class MainCamera : MonoBehaviour
 
     private float rotator = 360f / (2 * Mathf.PI) * 0.001f;
 
-    private int field = 1;
-    public int switchSpeed = 100;
-    private bool switching = false;
-    private float moved = 0f;
+    private bool game_field = true;
+    public float timeToSwap = 3f;
+    private float switching = 0f;
 
-    public GameObject gameUI;
-    public GameObject baseUI;
+    public Transform fieldCenter;
+    private Vector3 center_pos;
+
+    private UIManager uimanager;
 
     private void Start()
     {
         circleIncrement = circleIncrement * rotate_speed;
         rotator = rotator * rotate_speed;
+        uimanager = GameObject.FindGameObjectWithTag("UIManager").GetComponent<UIManager>();
+
+        center_pos = fieldCenter.position;
     }
 
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.Escape))
-            doMovement = !doMovement;
+        if (switching > 0f) switching -= Time.deltaTime;
+        if (Input.GetKeyUp("tab") && switching <= 0f)
+        {
+            SwitchField();
+        } 
 
-        if (!doMovement)
-            return;
+        CameraMovement();
+  
 
-        //get position of the middle of the board
-        GameObject fieldCenter = GameObject.Find("FieldCenter");
-        Vector3 center_pos = fieldCenter.transform.position;
+    }
 
+    private void SwitchField()
+    {
+        game_field = !game_field;
+
+        if (game_field)
+        {
+            uimanager.SetActiveScreen(0, true);
+            uimanager.SetActiveScreen(1, false);
+        } else
+        {
+            uimanager.SetActiveScreen(1, true);
+            uimanager.SetActiveScreen(0, false);
+
+        }
+
+        Vector3 endpos = new Vector3(0, 0, 200);
+        if (game_field) StartCoroutine(timeToSwap.Tweeng((p) => fieldCenter.position = p, fieldCenter.position, fieldCenter.position + endpos));
+        if (!game_field) StartCoroutine(timeToSwap.Tweeng((p) => fieldCenter.position = p, fieldCenter.position, fieldCenter.position - endpos));
+
+        switching = timeToSwap;
+    }
+
+    private void CameraMovement()
+    {
         
-
-        
-
-        if (Input.GetKeyUp("tab") && !switching)
-        {
-            switching = true;
-            field *= -1;
-
-        }
-        if (switching)
-        {
-            if (Mathf.Abs(moved) >= 200)
-            {
-                switching = false;
-                moved = 0f;
-                return;
-            }
-
-            Vector3 dir = new Vector3(0,0,field); 
-            fieldCenter.transform.Translate(dir.normalized * switchSpeed * Time.deltaTime, Space.World);
-            moved += switchSpeed * Time.deltaTime;
-
-        }
-
-
-        if (field == 1)
-        {
-            gameUI.SetActive(true);
-            baseUI.SetActive(false);
-        }
-        else if (field == -1)
-        {
-            gameUI.SetActive(false);
-            baseUI.SetActive(true);
-        }
-
-
-
-
-        Vector3 pos = transform.position;
+        Vector3 pos = transform.localPosition;
 
         if (Input.GetKey("w"))
         {
@@ -95,7 +84,7 @@ public class MainCamera : MonoBehaviour
         }
         if (Input.GetKey("s"))
         {
-            pos.y += ySpeed * Time.deltaTime;  
+            pos.y += ySpeed * Time.deltaTime;
         }
         if (Input.GetKey("a"))
         {
@@ -110,13 +99,11 @@ public class MainCamera : MonoBehaviour
 
 
         pos.y = Mathf.Clamp(pos.y, minY, maxY);
-        pos.x = center_pos.x + Mathf.Cos(circlePos) * width;
-        pos.z = center_pos.z + Mathf.Sin(circlePos) * width;
+        pos.x = center_pos.x + 20 + Mathf.Cos(circlePos) * width;
+        pos.z = center_pos.z - 20 + Mathf.Sin(circlePos) * width;
 
-        transform.position = pos;
-
+        transform.localPosition = pos;
     }
-
 
 }
 
