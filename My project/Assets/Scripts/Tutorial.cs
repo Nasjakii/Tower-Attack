@@ -31,7 +31,7 @@ public class Tutorial : MonoBehaviour
             tutorial_text = new string[5];
             tutorial_headline = new string[5]; 
             tutorial_headline[0] = "Welcome";
-            tutorial_text[0] = "Hello Commander, \nWe have to destroy the enemy's base to retake this part of Earth. \n\n\n[Space] to continue";
+            tutorial_text[0] = "Hello Commander, \nWe have to destroy the enemy's base to retake this part of Earth.";
             tutorial_headline[1] = "Camera Control";
             tutorial_text[1] = "You can control the camera by using [W,A,S,D].";
             tutorial_headline[2] = "Swapping View";

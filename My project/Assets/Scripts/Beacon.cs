@@ -54,6 +54,10 @@ public class Beacon : MonoBehaviour, IPointerDownHandler
     {
         spawnTroops.Add(troop);
     }
+    public void removeTroop(SpawnTroop troop)
+    {
+        spawnTroops.Remove(troop);
+    }
 
     public void sendTroopData()
     {

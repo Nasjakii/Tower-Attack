@@ -14,7 +14,11 @@ public class ShipTile : MonoBehaviour
 
     [HideInInspector]
     public GameObject troop;
-    
+    [HideInInspector]
+    public SpawnTroop spawnTroop;
+    [HideInInspector]
+    public TroopBlueprint troopBP;
+
     public int tileIndex;
 
     private Renderer rend;
@@ -34,11 +38,7 @@ public class ShipTile : MonoBehaviour
     {
         if (!buyManager.CanPlace) return;
 
-        if (troop != null)
-        {
-            Debug.Log("Cant place here! - Todo Display on screen");
-            return;
-        }
+        if (troop != null) return; //cant place on another troop
 
         buyManager.PlaceTroopOn(this);
 
@@ -50,6 +50,7 @@ public class ShipTile : MonoBehaviour
         {
             if (this.troop == null) return;
             buyManager.DeleteTroopOn(this);
+            
         }
     }
 

@@ -6,13 +6,6 @@ public class BuyManager : MonoBehaviour
 {
     public static BuyManager instance;
 
-
-    public void Start()
-    {
-        
-    }
-
-
     private void Awake()
     {
         if (instance != null)
@@ -46,23 +39,32 @@ public class BuyManager : MonoBehaviour
 
         SpawnTroop inst = new SpawnTroop();
         inst.troopPrefab = troop_to_buy.prefab;
-        inst.count = 5;
+        inst.count = 2;
         inst.time_between_spawns = 0.5f;
-        inst.time_after_spawn = 2;
+        inst.time_after_spawn = 1;
         inst.spawn_index = shipTile.tileIndex;
         beacon.GetComponent<Beacon>().addTroop(inst);
 
         GameObject troop = (GameObject)Instantiate(troop_to_buy.prefab, shipTile.GetPlacePosition(), inst.troopPrefab.transform.rotation);
         troop.GetComponent<AIController>().idle = true;
         shipTile.troop = troop;
+        shipTile.troopBP = troop_to_buy;
+        shipTile.spawnTroop = inst;
 
     }
 
     public void DeleteTroopOn(ShipTile shipTile)
     {
+        //delete from beacon list
+        int beacon_num = shipTile.beaconNumber;
+        GameObject beacon = GetBeacon(beacon_num);
+        beacon.GetComponent<Beacon>().removeTroop(shipTile.spawnTroop);
+        shipTile.spawnTroop = null;
+
         Destroy(shipTile.troop);
         shipTile.troop = null;
-        //delete from beacon list
+        PlayerStats.Money += shipTile.troopBP.cost;
+        shipTile.troopBP = null;
     }
 
     public void SelectTroopToBuy(TroopBlueprint troop)
