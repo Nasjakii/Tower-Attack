@@ -16,6 +16,24 @@ public class GameEnd : MonoBehaviour
     }
     public void LoadNext()
     {
-        //TODO
+        string scene_name = SceneManager.GetActiveScene().name;
+
+        Scene next_scene;
+        switch(scene_name)
+        {
+            case ("Tutorial 1"):
+                next_scene = SceneManager.GetSceneByName("Tutorial 2");
+                break;
+            case ("Tutorial 2"):
+                next_scene = SceneManager.GetSceneByName("Tutorial 3");
+                break;
+            case ("Tutorial 3"):
+                next_scene = SceneManager.GetSceneByName("MainMenu");
+                break;
+
+            default:
+                next_scene = SceneManager.GetSceneByName("MainMenu");
+                break;
+        }
     }
 }

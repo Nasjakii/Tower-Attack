@@ -34,8 +34,9 @@ public class Basis : MonoBehaviour
         if (curr_hp <= 0f)
         {
             uiManager.SetScreen(3);
-            uiManager.EditEndScreen(true, 2);
+            uiManager.EditEndScreen(true, 3);
             game_active = false;
+            return;
         } else
         {
             healthbar.UpdateHealtbar(hp, curr_hp);
@@ -61,7 +62,6 @@ public class Basis : MonoBehaviour
                 }
             }
         }
-        
 
         if (troops_left == 0)
         {

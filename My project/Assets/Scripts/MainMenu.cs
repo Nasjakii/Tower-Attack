@@ -16,7 +16,7 @@ public class MainMenu : MonoBehaviour
 
     public void LoadScene(string level_name)
     {
-        if (Application.CanStreamedLevelBeLoaded("sceneName"))
+        if (Application.CanStreamedLevelBeLoaded(level_name))
         {
             SceneManager.LoadScene(level_name);
         }
