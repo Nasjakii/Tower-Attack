@@ -46,7 +46,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3eb590710e758484883c3fe21e5e45a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 100
+  hp: 30
+  healthbar: {fileID: 0}
+  curr_hp: 0
+  game_active: 1
 --- !u!65 &4982059764528845658
 BoxCollider:
   m_ObjectHideFlags: 0

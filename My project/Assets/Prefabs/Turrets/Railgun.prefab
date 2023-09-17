@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37afec50dd4e27e4ea0b54e5bec58692, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHp: 10
+  maxHp: 5
   healthbar: {fileID: 4252918953973380548}
   CanShoot: 1
   bulletPrefab: {fileID: 5121043399516625810, guid: 29822e2c7f953834aab895bb4fdc80d4, type: 3}

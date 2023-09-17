@@ -49,8 +49,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drone: {fileID: 2688473930760863618, guid: 9de64ec74f7fee1449c3021239b164cd, type: 3}
-  spawn_cooldown: 3
-  max_drone_count: 5
+  spawn_cooldown: 4
+  max_drone_count: 3
 --- !u!114 &6278123214500033426
 MonoBehaviour:
   m_ObjectHideFlags: 0

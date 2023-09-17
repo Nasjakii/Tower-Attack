@@ -69,6 +69,12 @@ public class Bullet : MonoBehaviour
         }
         if (tag == "Tower")
         {
+            Drone component = inst.GetComponent<Drone>();
+            if (component != null)
+            {
+                component.getDamage(damage);
+                return;
+            }
             inst.GetComponent<Tower>().getDamage(damage);
         }
     }

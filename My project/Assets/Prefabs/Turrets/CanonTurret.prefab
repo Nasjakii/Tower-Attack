@@ -222,7 +222,7 @@ MonoBehaviour:
   firePoint: {fileID: 2723338885339663527}
   range: 15
   turnSpeed: 15
-  fireRate: 1
+  fireRate: 3
 --- !u!65 &7341268135151087727
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -26,7 +26,7 @@ public class DroneHub : MonoBehaviour
         animator = model.GetComponent<Animator>();
         spawner = GameObject.FindGameObjectWithTag("Spawner");
 
-        spawn_timer = spawn_cooldown;
+        spawn_timer = 0;
     }
 
     private void Update()
@@ -66,9 +66,7 @@ public class DroneHub : MonoBehaviour
 
     public void Remove(GameObject drone)
     {
-        Debug.Log("remove");
         if (drone.GetComponent<Drone>().hub == null) return;
-        Debug.Log("delete");
         drones.Remove(drone);
     }
 }

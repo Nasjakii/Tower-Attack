@@ -85,7 +85,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 5
   speed: 5
-  maxHp: 20
+  maxHp: 10
   healthbar: {fileID: 8396922328666092999}
   CanShoot: 0
   bulletPrefab: {fileID: 0}

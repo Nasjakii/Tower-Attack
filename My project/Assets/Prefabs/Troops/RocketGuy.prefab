@@ -4251,12 +4251,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 3
   speed: 8
-  maxHp: 5
+  maxHp: 3
   healthbar: {fileID: 2923363280107825172}
   CanShoot: 1
   bulletPrefab: {fileID: 6808281553001135974, guid: b7bd07ec8700f4f43a655b3dea3dc284, type: 3}
   firePoint: {fileID: 5971348351219025894}
-  range: 15
+  range: 8
   fireRate: 1
   stunned: 0
 --- !u!1 &7328504916902833039

@@ -117,7 +117,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2378799909739688667}
   - component: {fileID: 432549131097245094}
-  - component: {fileID: 3671474905928012405}
   - component: {fileID: 955651436789244737}
   m_Layer: 0
   m_Name: Drone
@@ -156,38 +155,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e71259f3e7e19f14b9798dddd045e77f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHp: 1
+  maxHp: 2
   range: 8
   damage: 1
   fireRate: 1
-  speed: 2
+  speed: 1
   turnSpeed: 10
   healthbar: {fileID: 8827183804396521882}
   bulletPrefab: {fileID: 5121043399516625810, guid: 29822e2c7f953834aab895bb4fdc80d4, type: 3}
   firePoint: {fileID: 4846939230091542581}
   hub: {fileID: 0}
   currentHp: 0
---- !u!114 &3671474905928012405
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2688473930760863618}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37afec50dd4e27e4ea0b54e5bec58692, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHp: 2
-  healthbar: {fileID: 8827183804396521882}
-  CanShoot: 0
-  bulletPrefab: {fileID: 0}
-  rotationPoint: {fileID: 0}
-  firePoint: {fileID: 0}
-  range: 15
-  turnSpeed: 15
-  fireRate: 1
+  circle_rad: 4
 --- !u!65 &955651436789244737
 BoxCollider:
   m_ObjectHideFlags: 0
