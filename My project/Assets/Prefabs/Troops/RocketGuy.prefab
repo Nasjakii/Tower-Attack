@@ -4200,7 +4200,7 @@ Transform:
   - {fileID: 3861289793699384325}
   - {fileID: 5971348351219025894}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!195 &278148211367068541
 NavMeshAgent:
@@ -5887,6 +5887,10 @@ PrefabInstance:
     - target: {fileID: 7052472911943385634, guid: 296c923ffd84d214bb6b289a66acb2ae, type: 3}
       propertyPath: m_SizeDelta.y
       value: 672
+      objectReference: {fileID: 0}
+    - target: {fileID: 7052472911943385634, guid: 296c923ffd84d214bb6b289a66acb2ae, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.003
       objectReference: {fileID: 0}
     - target: {fileID: 7052472911943385634, guid: 296c923ffd84d214bb6b289a66acb2ae, type: 3}
       propertyPath: m_LocalPosition.x

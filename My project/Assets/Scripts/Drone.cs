@@ -55,9 +55,13 @@ public class Drone : MonoBehaviour
 
         if (currentHp <= 0f)
         {
-            DroneHub hubComp = hub.GetComponent<DroneHub>();
-            if (hubComp != null) hubComp.Remove(gameObject);
             Destroy(gameObject);
+            if (hub != null)
+            {
+                DroneHub hubComp = hub.GetComponent<DroneHub>();
+                if (hubComp != null) hubComp.Remove(gameObject);
+            }
+            
         }
 
         if (transform.position.y < 6) //fly up before anything else

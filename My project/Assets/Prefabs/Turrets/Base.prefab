@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 30
-  healthbar: {fileID: 0}
+  healthbar: {fileID: 8996146179289327155, guid: 296c923ffd84d214bb6b289a66acb2ae, type: 3}
   curr_hp: 0
   game_active: 1
 --- !u!65 &4982059764528845658
