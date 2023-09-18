@@ -26,7 +26,7 @@ public class ShipTile : MonoBehaviour
     BuyManager buyManager;
     private void Start()
     {
-        rend = GetComponent<Renderer>();
+        rend = transform.GetChild(0).GetComponent<Renderer>();
         UpdateConnection();
         
         buyManager = BuyManager.instance;
