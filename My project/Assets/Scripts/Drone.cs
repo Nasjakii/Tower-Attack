@@ -64,22 +64,28 @@ public class Drone : MonoBehaviour
             
         }
 
-        if (transform.position.y < 6) //fly up before anything else
+        if (hub != null) //cant move without center transform
         {
-            transform.position -= new Vector3(0, -speed * Time.deltaTime, 0);
-            return;
-        }
-        if (transform.position.z - center.position.z < 3 && !start_sequence_done)  //fly to side 
-        {
-            transform.localPosition += new Vector3(0,0,speed * Time.deltaTime);
-            return;
-        } else
-        {
-            start_sequence_done = true;
+            if (transform.position.y < 6) //fly up before anything else
+            {
+                transform.position -= new Vector3(0, -speed * Time.deltaTime, 0);
+                return;
+            }
+            if (transform.position.z - center.position.z < 3 && !start_sequence_done)  //fly to side 
+            {
+                transform.localPosition += new Vector3(0, 0, speed * Time.deltaTime);
+                return;
+            }
+            else
+            {
+                start_sequence_done = true;
+            }
+
+            
         }
 
 
-        if (target == null) //no target -> just move
+        if (target == null && hub != null) //no target -> just move
         {
             timeCounter += Time.deltaTime * speed;
             float x = Mathf.Sin(timeCounter) * circle_rad;
@@ -87,20 +93,23 @@ public class Drone : MonoBehaviour
             transform.position = new Vector3(center.position.x + x, transform.position.y, center.position.z + z);
             return;
         }
-            
 
-        Vector3 dir = target.position - transform.position;
-        Quaternion lookRotation = Quaternion.LookRotation(dir);
-        Vector3 rotation = Quaternion.Lerp(transform.rotation, lookRotation, Time.deltaTime * turnSpeed).eulerAngles;
-        transform.rotation = Quaternion.Euler(rotation);
-
-        if (fireCountdown <= 0f)
+        if (target != null)
         {
-            Shoot();
-            fireCountdown = 1f / fireRate;
-        }
+            Vector3 dir = target.position - transform.position;
+            Quaternion lookRotation = Quaternion.LookRotation(dir);
+            Vector3 rotation = Quaternion.Lerp(transform.rotation, lookRotation, Time.deltaTime * turnSpeed).eulerAngles;
+            transform.rotation = Quaternion.Euler(rotation);
 
-        fireCountdown -= Time.deltaTime;
+            if (fireCountdown <= 0f)
+            {
+                Shoot();
+                fireCountdown = 1f / fireRate;
+            }
+
+            fireCountdown -= Time.deltaTime;
+        }
+        
     }
 
     void UpdateTarget()
