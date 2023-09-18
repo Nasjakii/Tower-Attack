@@ -10804,6 +10804,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 5844958065696965110, guid: 296c923ffd84d214bb6b289a66acb2ae, type: 3}
+      propertyPath: m_FillAmount
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6623216271298868944, guid: 296c923ffd84d214bb6b289a66acb2ae, type: 3}
       propertyPath: m_PresetInfoIsWorld
       value: 0
@@ -13651,7 +13655,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: f99a3e5d2b4c6a447a03f9b167a142ce, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 1f328c8627265f74aa805d5f425b44fa, type: 2}
   m_BuildHeightMesh: 0
 --- !u!1001 &1192097534
 PrefabInstance:

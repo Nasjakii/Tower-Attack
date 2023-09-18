@@ -32,6 +32,9 @@ public class GameEnd : MonoBehaviour
                 next_scene = "Level 1";
                 break;
             case ("Level 1"):
+                next_scene = "Level 2";
+                break;
+            case ("Level 2"):
                 next_scene = "MainMenu";
                 break;
 
