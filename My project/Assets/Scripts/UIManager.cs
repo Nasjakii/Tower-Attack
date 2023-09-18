@@ -49,5 +49,9 @@ public class UIManager : MonoBehaviour
 
         Stars stars = GameEndScreen.transform.GetChild(2).gameObject.GetComponent<Stars>();
         stars.SetScore(score);
+
+        GameObject buttonNext = GameEndScreen.transform.GetChild(4).gameObject;
+        buttonNext.SetActive(win);
+
     }
 }

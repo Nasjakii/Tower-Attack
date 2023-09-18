@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: bc4263ae4c977dd41b23c19da5c521e2
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Space Crusaders
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 68faf3a212bc7d14bb719529b577e204, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

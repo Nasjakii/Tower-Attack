@@ -1,6 +1,8 @@
 
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Spawner : MonoBehaviour
@@ -20,17 +22,25 @@ public class Spawner : MonoBehaviour
 
     private Renderer rend;
     public Transform spawnLocation;
+
+    private bool change_alpha = false;
+
     private void Start()
     {
-        rend = GetComponent<Renderer>();
-        switchColor(spawnNumber, rend);
+        rend = gameObject.GetComponent<Renderer>();
+        switchColor(spawnNumber, rend, 1f);
     }
 
     void FixedUpdate()
     {
 
         if (spawn == false) return;
-        
+
+        if (change_alpha == false)
+        {
+            change_alpha = true;
+            StartCoroutine(Fade());
+        }
 
         if (troopsToSpawn.Count > 0 && downtime <= 0)
         {
@@ -65,24 +75,31 @@ public class Spawner : MonoBehaviour
 
     }
 
-    private void switchColor(int number, Renderer _rend)
+    private void switchColor(int number, Renderer _rend, float _alpha)
     {
         switch (number)
         {
             case 0:
-                _rend.material.SetColor("_Color", Color.red);
+                _rend.material.SetColor("_Color", new Color(1f, 0f, 0f, _alpha));
                 break;
             case 1:
-                _rend.material.SetColor("_Color", Color.green);
+                _rend.material.SetColor("_Color", new Color(0f, 1f, 0f, _alpha));
                 break;
             case 2:
-                _rend.material.SetColor("_Color", Color.blue);
+                _rend.material.SetColor("_Color", new Color(0f, 0f, 1f, _alpha));
                 break;
 
         }
     }
 
-
+    IEnumerator Fade()
+    {
+        for (float alpha = 1f; alpha >= 0; alpha -= 0.01f)
+        {
+            switchColor(spawnNumber, rend, alpha);
+            yield return new WaitForSeconds(.01f); ;
+        }
+    }
 
 }
 
