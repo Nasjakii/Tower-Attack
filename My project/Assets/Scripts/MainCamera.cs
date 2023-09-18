@@ -88,13 +88,13 @@ public class MainCamera : MonoBehaviour
         }
         if (Input.GetKey("a"))
         {
-            circlePos -= circleIncrement;
-            transform.Rotate(Vector3.up * rotator, Space.World);
+            circlePos -= circleIncrement * Time.deltaTime;
+            transform.Rotate(Vector3.up * rotator * Time.deltaTime, Space.World);
         }
         if (Input.GetKey("d"))
         {
-            circlePos += circleIncrement;
-            transform.Rotate(Vector3.down * rotator, Space.World);
+            circlePos += circleIncrement * Time.deltaTime;
+            transform.Rotate(Vector3.down * rotator * Time.deltaTime, Space.World);
         }
 
 

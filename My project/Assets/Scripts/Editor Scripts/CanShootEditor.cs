@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEditor;
 
+#if UNITY_EDITOR
 [CustomEditor(typeof(Troop))]
 [CanEditMultipleObjects]
 public class CanShootEditor : Editor
@@ -26,3 +27,4 @@ public class CanShootEditor : Editor
 }
 
 
+#endif

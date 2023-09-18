@@ -1878,9 +1878,9 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 6050845285713138542}
   - {fileID: 5498187850240176149}
   - {fileID: 8603202856006504314}
+  - {fileID: 6050845285713138542}
   m_Father: {fileID: 6017740087542213654}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2087,7 +2087,7 @@ Transform:
   - {fileID: 8860215650992061370}
   - {fileID: 5396867375606622674}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 38.686, y: 0, z: 0}
 --- !u!114 &3132565255569826189
 MonoBehaviour:

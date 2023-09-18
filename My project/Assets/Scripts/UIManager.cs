@@ -20,6 +20,7 @@ public class UIManager : MonoBehaviour
                 ShopUI.SetActive(state);
                 break;
             case 2:
+                if (Tutorial == null) break;
                 Tutorial.SetActive(state);
                 break;
             case 3:

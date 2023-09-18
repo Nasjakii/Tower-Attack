@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEditor;
 
+#if UNITY_EDITOR
 [CustomEditor(typeof(Tower))]
 [CanEditMultipleObjects]
 public class CanShootEditorTower : Editor
@@ -28,3 +29,4 @@ public class CanShootEditorTower : Editor
 }
 
 
+#endif

@@ -196,8 +196,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2723338885339663527}
   - {fileID: 2224251494388421172}
+  - {fileID: 2723338885339663527}
   - {fileID: 8973480777301785305}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -287,6 +287,10 @@ PrefabInstance:
     - target: {fileID: 733607620771478095, guid: 296c923ffd84d214bb6b289a66acb2ae, type: 3}
       propertyPath: m_Name
       value: Healthbar Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 5844958065696965110, guid: 296c923ffd84d214bb6b289a66acb2ae, type: 3}
+      propertyPath: m_FillAmount
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7052472911943385634, guid: 296c923ffd84d214bb6b289a66acb2ae, type: 3}
       propertyPath: m_Pivot.x

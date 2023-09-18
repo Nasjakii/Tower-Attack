@@ -19,10 +19,12 @@ public class Shop : MonoBehaviour
         TextMeshProUGUI text0 = transform.GetChild(0).GetChild(0).gameObject.GetComponent<TextMeshProUGUI>();
         TextMeshProUGUI text1 = transform.GetChild(1).GetChild(0).gameObject.GetComponent<TextMeshProUGUI>();
         TextMeshProUGUI text2 = transform.GetChild(2).GetChild(0).gameObject.GetComponent<TextMeshProUGUI>();
-        
-        text0.SetText(text0.text + rocketGuy.cost + " <sprite=0>");
+
+        text0.SetText(text0.text + tank.cost + " <sprite=0>");
         text1.SetText(text1.text + speedster.cost + " <sprite=0>");
-        text2.SetText(text2.text + tank.cost + " <sprite=0>");
+        text2.SetText(text2.text + rocketGuy.cost + " <sprite=0>");
+        
+        
         
     }
 

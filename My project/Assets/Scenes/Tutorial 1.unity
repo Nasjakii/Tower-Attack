@@ -168,7 +168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c68c6e28c4fa2bb4faf1177c04fa2a0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startMoney: 4000
+  startMoney: 800
 --- !u!114 &20288909
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1025,7 +1025,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 167271192}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.000030517578}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1560,7 +1560,7 @@ MonoBehaviour:
   m_text: "Rocket Guy \n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 714cde063145fef449c5173929216d20, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: -9186130347640441585, guid: 714cde063145fef449c5173929216d20, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1623,7 +1623,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: -22.606384, z: 0.5893707, w: -19.893616}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &196107227
@@ -6939,7 +6939,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ySpeed: 50
-  rotate_speed: 2.5
+  rotate_speed: 750
   timeToSwap: 3
   fieldCenter: {fileID: 661300368}
 --- !u!114 &963194230
@@ -7217,7 +7217,7 @@ MonoBehaviour:
   m_text: "Speedster \n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 714cde063145fef449c5173929216d20, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: -9186130347640441585, guid: 714cde063145fef449c5173929216d20, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -7280,7 +7280,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: -22.606384, z: 0.5893707, w: -19.893616}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &985223666
@@ -8638,7 +8638,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 512
+  m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -8666,7 +8666,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 357.26538, y: 37.87085, z: 358.57043, w: 594.4019}
+  m_margin: {x: 357.26538, y: 30, z: 358.57043, w: 594.4019}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -8930,10 +8930,10 @@ RectTransform:
   m_Father: {fileID: 700814225}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 390, y: 0}
-  m_SizeDelta: {x: -820, y: -300}
+  m_AnchorMin: {x: 1, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: -145, y: 0}
+  m_SizeDelta: {x: 250, y: 390}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1211498181
 MonoBehaviour:
@@ -9162,7 +9162,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 159.5}
+  m_AnchoredPosition: {x: 0, y: 171}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1234378530
@@ -9335,17 +9335,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0f9bc89ca7be454db65dc871a1f9f59, type: 3}
---- !u!114 &1249324508 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2011436340181912423, guid: f54852b2d15cc14429c998f6b77d49d4, type: 3}
-  m_PrefabInstance: {fileID: 1853219410}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc37d48fa712dae408878df52ba0e476, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1274665390 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1269501789379072795, guid: f54852b2d15cc14429c998f6b77d49d4, type: 3}
@@ -10111,7 +10100,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6762809092920366036, guid: 53f702dd10574ac47b572252024c29b2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 30
+      value: 26.29
       objectReference: {fileID: 0}
     - target: {fileID: 6762809092920366036, guid: 53f702dd10574ac47b572252024c29b2, type: 3}
       propertyPath: m_LocalRotation.w
@@ -10883,7 +10872,7 @@ MonoBehaviour:
 '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 714cde063145fef449c5173929216d20, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: -9186130347640441585, guid: 714cde063145fef449c5173929216d20, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -10946,7 +10935,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: -22.606384, z: 0.5893707, w: -19.893616}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1565822143
@@ -12156,10 +12145,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Missile Turret
       objectReference: {fileID: 0}
-    - target: {fileID: 5853809905845101947, guid: f54852b2d15cc14429c998f6b77d49d4, type: 3}
-      propertyPath: healthbar
-      value: 
-      objectReference: {fileID: 1249324508}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
