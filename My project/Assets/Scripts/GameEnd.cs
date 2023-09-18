@@ -8,6 +8,7 @@ public class GameEnd : MonoBehaviour
     public void ReloadScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
     }
 
     public void LoadMenu()
@@ -28,6 +29,9 @@ public class GameEnd : MonoBehaviour
                 next_scene = "Tutorial 3";
                 break;
             case ("Tutorial 3"):
+                next_scene = "Level 1";
+                break;
+            case ("Level 1"):
                 next_scene = "MainMenu";
                 break;
 

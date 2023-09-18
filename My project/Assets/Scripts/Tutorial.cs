@@ -37,7 +37,7 @@ public class Tutorial : MonoBehaviour
             tutorial_headline[2] = "Swapping View";
             tutorial_text[2] = "Press [Tab] to swap back and forth between base and Earth.";
             tutorial_headline[3] = "Buying Troops";
-            tutorial_text[3] = "Select a troop and place it on one of the colored squares.";
+            tutorial_text[3] = "Select the tank and place some of them on the colored squares.";
             tutorial_headline[4] = "Attack";
             tutorial_text[4] = "Head back to Earth [Tab] and start by clicking [Attack].";
         }

@@ -159,7 +159,7 @@ MonoBehaviour:
   range: 8
   damage: 1
   fireRate: 1
-  speed: 1
+  speed: 2
   turnSpeed: 10
   healthbar: {fileID: 8827183804396521882}
   bulletPrefab: {fileID: 5121043399516625810, guid: 29822e2c7f953834aab895bb4fdc80d4, type: 3}
@@ -396,6 +396,10 @@ PrefabInstance:
     - target: {fileID: 733607620771478095, guid: 296c923ffd84d214bb6b289a66acb2ae, type: 3}
       propertyPath: m_Name
       value: Healthbar Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 5844958065696965110, guid: 296c923ffd84d214bb6b289a66acb2ae, type: 3}
+      propertyPath: m_FillAmount
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7052472911943385634, guid: 296c923ffd84d214bb6b289a66acb2ae, type: 3}
       propertyPath: m_Pivot.x
